@@ -1,0 +1,18 @@
+{
+  "packages": [
+    {
+      "name": "swift-android-compiler",
+      "versions": [
+        {
+          "version": "5.8.0",
+          "url": "https://github.com/scade-platform/swift-android-toolchain/releases/download/5.8.0/swift-android-compiler-5.8.0.tar.bz2"
+        },
+        {
+          "version": "5.9.0",
+          "url": "https://github.com/scade-platform/swift-android-toolchain/releases/download/5.9.2/swift-android-compiler-5.9.2.tar.bz2"
+        }
+      ]
+    }
+  ]
+}
+
