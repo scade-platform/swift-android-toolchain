@@ -1,0 +1,235 @@
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding: 40px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-content: end;
+    z-index: 3;
+}
+
+header svg {
+    margin-top: 8px;
+    color: rgba(130, 130, 130, 1);
+    display: none;
+}
+
+header .logo-dark {
+    margin-top: 24px;
+}
+
+main {
+    padding: 20px 5%;
+    display: flex;
+}
+
+main .first-column {
+    width: 20%;
+}
+
+main .second-column {
+    width: 60%;
+    padding-right: 5%;
+}
+
+main .third-column {
+    width: 20%;
+    display: flex;
+}
+
+main .third-column .tree-container {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid black;
+    margin-top: 70px;
+    max-height: 240px;
+    padding-left: 16px;
+    font-weight: 400;
+    color: rgba(130, 130, 130, 1);
+    line-height: 38px;
+}
+
+main .third-column .tree-container p {
+    line-height: 19px;
+}
+
+main .third-column .tree-container p a{
+    font-size: 16px;
+    margin: 0 0 18px;
+}
+
+main .third-column .tree-container a {
+    text-decoration: none;
+    font-size: 20px;
+    color: rgba(130, 130, 130, 1);
+}
+
+main .third-column .tree-container a:hover {
+    color: rgb(84, 84, 84);
+}
+
+main .second-column {
+    font-family: 'Inter', sans-serif;
+}
+
+main .second-column h1 {
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 48px;
+    color: rgba(60, 60, 67, 1);
+}
+
+main .second-column .description-text {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(148, 148, 148, 1);
+}
+
+.bottom-border {
+    border-bottom: 1px solid black;
+    width: 100%;
+    padding-bottom: 28px;
+}
+
+main .second-column img {
+    width: 100%;
+}
+
+main .second-column h2 {
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 44px;
+    margin-top: 48px;
+}
+
+main .second-column h3 {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 29px;
+    margin-top: 36px;
+    color: rgba(60, 60, 67, 1);
+}
+
+main .second-column pre {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgba(60, 60, 67, 0.7);
+    white-space: pre-wrap;
+    margin: 0;
+    font-family: 'Mona Sans', sans-serif;
+}
+
+main .second-column .container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 16px;
+    margin-right: 20%;
+}
+
+main .second-column .container .article-block{
+    width: 285px;
+    border: 1px solid rgba(60, 60, 67, 1);
+    padding: 12px 12px 24px 12px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+    margin-right: 16px;
+}
+
+main .second-column .container .article-block img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+main .second-column .container .article-block p {
+    color: rgba(60, 60, 67, 1);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    margin-top: 0;
+    margin-bottom: 38px;
+}
+
+main .second-column .container .article-block button {
+    height: 50px;
+    border-radius: 4px;
+    background: transparent;
+    border: 1px solid rgba(217, 217, 217, 1);
+    color: rgba(60, 60, 67, 0.7);
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+}
+
+footer {
+    background-color: transparent;
+    padding: 40px 5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    color: rgba(148, 148, 148, 1);
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+}
+
+footer .logo-text {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    color: rgba(227, 227, 227, 1);
+}
+
+footer pre {
+    font-weight: 400;
+    font-family: 'Inter', sans-serif;
+}
+
+@media (max-width: 992px) {
+    header {
+        position: fixed;
+        background: #FFFFFF;
+        width: 90%;
+    }
+
+    header svg {
+        display: block;
+    }
+
+    main {
+        margin-top: 80px;
+    }
+
+    main .first-column {
+        display: none;
+    }
+
+    main .second-column {
+        width: 100%;
+    }
+
+    main .third-column {
+        display: none;
+        position: fixed;
+        width: 35%;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background-color: rgb(255, 255, 255);
+        z-index: 2;
+        font-family: 'Inter', sans-serif;
+        font-weight: 400;
+    }
+}

@@ -1,0 +1,356 @@
+html , body {
+    width: 100% !important;
+    overflow-x: hidden !important;
+}
+
+body {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    min-height: 100vh;
+    background: #0C0C2C url('../img/background-desktop-test.png') no-repeat;
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    padding: 40px 5%;
+}
+
+header .logo {
+    margin-top: 24px;
+}
+
+main {
+    position: relative;
+    padding: 20px 5%;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.content {
+    color: rgba(255, 255, 255, 1);
+    width: 100%;
+    margin-top: auto;
+    max-height: 317px;
+    font-size: 24px;
+    font-family: 'Mona Sans', sans-serif;
+}
+
+.line {
+    width: 393px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0) 84.86%);
+}
+
+.column {
+    width: 48%;
+}
+
+.second-column {
+    position: absolute;
+    left: 50%;
+    bottom: 3%;
+    padding-left: 5%;
+}
+
+.content .download {
+    background: rgba(241, 8, 55, 1);
+    width: 180px;
+    height: 59px;
+    border-radius: 8px;
+    border: 1px solid rgba(241, 8, 55, 1);
+    padding: 20px 40px;
+    color: #FFFFFF;
+    gap: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 19px;
+    cursor: pointer;
+    font-family: 'Mona Sans', sans-serif;
+}
+
+.content .download-link {
+    text-decoration: none;
+}
+
+.content .get-started {
+    background: transparent;
+    width: 193px;
+    height: 59px;
+    border-radius: 8px;
+    border: 2px solid rgba(241, 8, 55, 1);
+    padding: 20px 40px;
+    color: #FFFFFF;
+    gap: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    margin-left: 16px;
+    cursor: pointer;
+    font-family: 'Mona Sans', sans-serif;
+}
+
+.content .swift-for-android-text {
+    font-size: 64px;
+    line-height: 77px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.content .description {
+    line-height: 29px;
+    margin-bottom: 64px;
+}
+
+.content .options:first-child {
+    line-height: 29px;
+}
+
+.content .options {
+    line-height: 30px;
+    margin-top: 26px;
+    margin-bottom: 13px;
+}
+
+footer {
+    margin-top: auto;
+    background-color: transparent;
+    padding: 40px 5%;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+footer p {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+footer .social-media-container {
+    width: 100%;
+    max-width: 400px;
+    display: flex;
+    align-items: end;
+    justify-content: end;
+}
+
+footer .social-media-container img {
+    padding: 0 4px;
+    width: 32px;
+    height: 32px;
+}
+
+@media (min-width: 993px) and (max-width: 1080px) {
+    .content .swift-for-android-text {
+        font-size: 48px;
+    }
+
+    .content .description {
+        font-size: 20px;
+    }
+
+    .second-column {
+        font-size: 24px;
+    }
+}
+
+@media (min-width: 1770px) {
+    header .logo {
+        transform:
+                translate(50%, 20%)
+                scale(2);
+    }
+
+    .first-column {
+        transform:
+                translate(10%, 0)
+                scale(1.2);
+    }
+
+    .second-column {
+        transform:
+                translate(15%, 0)
+                scale(1.2);
+    }
+
+    .third-column {
+        transform:
+                translate(10%, 0)
+                scale(1.2);
+    }
+
+    footer p {
+        transform:
+                translate(10%, 0)
+                scale(1.2);
+    }
+
+    footer .social-media-container {
+        transform:
+                translate(0)
+                scale(1.2);
+    }
+}
+
+@media (min-width: 2370px) {
+    header .logo {
+        transform:
+                translate(70%, 100%)
+                scale(2.8);
+    }
+
+    .first-column {
+        max-width: 48%;
+        transform:
+                translate(40%, -40%)
+                scale(1.8);
+    }
+
+    .second-column {
+        transform:
+                translate(40%, -40%)
+                scale(1.8);
+    }
+
+    .third-column {
+        transform:
+                translate(40%, -40%)
+                scale(1.8);
+    }
+
+    footer p {
+        transform:
+                translate(10%, 0)
+                scale(1.2);
+    }
+
+    footer .social-media-container {
+        transform:
+                translate(0)
+                scale(1.2);
+    }
+}
+
+@media (min-width: 3550px) {
+    header .logo {
+        transform:
+                translate(170%, 200%)
+                scale(4);
+    }
+}
+
+@media (min-width: 3550px) {
+    header .logo {
+        transform:
+                translate(170%, 500%)
+                scale(5);
+    }
+}
+
+@media (max-width: 992px) {
+    /*Change background image*/
+    body {
+        overflow-y: scroll;
+        overflow-x: hidden;
+        width: 100vw;
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    header .logo {
+        margin-top: 12px;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        max-height: none;
+        padding-top: 300px;
+    }
+    .column {
+        width: 100%;
+    }
+
+    .first-column {
+        order: 1;
+    }
+
+    .second-column {
+        position: relative;
+        left: 0;
+        order: 2;
+        padding: 0;
+        align-items: start;
+    }
+
+    .third-column {
+        order: 3;
+    }
+
+    .content .swift-for-android-text {
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    .content .description {
+        font-size: 22px;
+        line-height: 26px;
+        margin-bottom: 16px;
+    }
+
+    .content .options {
+        font-size: 22px;
+        line-height: 26px;
+    }
+
+    .content .download {
+        width: 100%;
+        height: 59px;
+        margin-top: 16px;
+    }
+
+    .content .get-started {
+        width: 100%;
+        height: 59px;
+        margin: 16px 0 0;
+    }
+}
+
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+    }
+
+    footer .social-media-container {
+        margin-top: 16px;
+        align-items: start;
+        justify-content: start;
+    }
+
+    footer .social-media-container img:first-child {
+        padding-left: 0;
+    }
+}
+
+@media (max-width: 470px) {
+    body {
+        background-image: url('../img/background-small-test.png');
+        background-repeat: no-repeat;
+    }
+
+    .line {
+        width: 251px;
+    }
+}

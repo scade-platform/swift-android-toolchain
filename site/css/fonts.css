@@ -1,0 +1,53 @@
+@font-face {
+    font-family: 'Mona Sans Expanded';
+    src: url('../fonts/MonaSansExpanded-Regular.woff2') format('woff2'),
+    url('../fonts/MonaSansExpanded-Regular.woff') format('woff');
+    font-weight: 500 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mona Sans';
+    src: url('../fonts/MonaSans-Regular.woff2') format('woff2'),
+    url('../fonts/MonaSans-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mona Sans';
+    src: url('../fonts/MonaSans-SemiBold.woff2') format('woff2'),
+    url('../fonts/MonaSans-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Mona Sans';
+    src: url('../fonts/MonaSans-Bold.woff2') format('woff2'),
+    url('../fonts/MonaSans-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-Regular.woff2') format('woff2'),
+    url('../fonts/Inter-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-SemiBold.woff2') format('woff2'),
+    url('../fonts/Inter-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
