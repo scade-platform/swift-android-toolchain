@@ -9,8 +9,12 @@ body {
     padding: 0;
     overflow: hidden;
     min-height: 100vh;
-    background: #0C0C2C url('../img/background-desktop-test.png') no-repeat;
-    background-size: 100% 100%;
+    background-image: url("../img/background-desktop.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: #0C0C2C;
     display: flex;
     flex-direction: column;
 }
@@ -114,7 +118,7 @@ main {
 .content .options {
     line-height: 30px;
     margin-top: 26px;
-    margin-bottom: 13px;
+    margin-bottom: 26px;
 }
 
 footer {
@@ -346,8 +350,9 @@ footer .social-media-container img {
 
 @media (max-width: 470px) {
     body {
-        background-image: url('../img/background-small-test.png');
+        background-image: url('../img/background-small.png');
         background-repeat: no-repeat;
+        background-attachment: scroll;
     }
 
     .line {
