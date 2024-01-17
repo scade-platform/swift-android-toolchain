@@ -3,171 +3,596 @@
 <head>
     <meta charset="UTF-8">
     <title>Scade</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/getStarted.css">
     <!--  <link rel="icon" href="/img/logo.svg" type="image/x-icon">-->
     <link href="css/fonts.css" rel="stylesheet">
 </head>
 <body>
 <header>
-    <img src="img/logo_dark.svg" alt="" class="logo-dark">
-    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" onclick="showThirdColumn()"
-         viewBox="0 0 448 512" class="icon" width="32" height="32">
-        <path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path>
-    </svg>
+    <img src="img/logo_red.svg" alt="" class="logo-red">
+    <div class="wrapper" id="btn">
+        <div class="hamburger hamburger--squeeze js-hamburger" id="hamburger">
+            <div class="hamburger-box">
+                <div class="hamburger-inner"></div>
+            </div>
+        </div>
+    </div>
 </header>
 <main>
-    <div class="first-column">
+    <div class="third-column">
+        <div class="tree-container">
+            <a href="#gettingStarted">Getting started</a>
+            <p>
+                <a href="#prerequisites"><span class="current-dot">•</span>Prerequisites</a><br />
+                <a href="#install"><span class="current-dot">•</span>Install</a><br />
+                <a href="#helloWorld"><span class="current-dot">•</span>Hello World</a><br />
+                <a href="#goFurther"><span class="current-dot">•</span>Go Further</a><br />
+            </p>
+        </div>
     </div>
     <div class="second-column">
-        <h1>Getting Started</h1>
-        <p class="bottom-border description-text">Swift-android-toolchain is written in vanilla JS, it's easy to integrate anywhere. These are general usage instructions. React, Vue and Angular integration samples are also available.</p>
+        <h1 class="bottom-border" id="gettingStarted">Getting Started with Swift for Android</h1>
+        <h3 id="prerequisites">1. Prerequisites</h3>
+        <p>
+Before you begin Swift development for Android, make sure you have the following tools installed:
+        </p>
+        <ol>
+            <li>Xcode (For macOS): <span class="inter-regular">If you don't have Xcode installed, it is recommended to install it from the Mac App Store. Xcode includes Swift, and the installation of Xcode will automatically include Swift as part of the development tools.</span></li>
+            <li>Android Studio: <span class="inter-regular">Android Studio is the official integrated development environment (IDE) for Android app development. You can download Android Studio from the official website: <a
+                    href=""> Android Studio Download.</a></span></li>
+            <li>SCADE IDE <span class="inter-regular">(Optional): If you are interested in using Scade for Swift development, you can download it from SCADE's official website: <a
+                    href="">Scade Download.</a></span></li>
+        </ol>
+        <h3 id="install">2. How to Install Swift for Android</h3>
+        <h4>For macOS</h4>
+        <p>
+Before setting up Swift for Android, ensure that you have Android Studio installed on your macOS. Follow these steps:
+        </p>
+        <ol class="dots">
+            <li><span class="inter-medium">Install Android Studio:</span></li>
+        </ol>
+        <ol class="dots intent-space">
+            <li class="inter-regular">Download Android Studio.</li>
+            <li class="inter-regular">Run the downloaded installer and follow the setup instructions.</li>
+            <li class="inter-regular">Launch Android Studio eand complete the initial configuration, including the installation of the Android SDK.</li>
+            <li class="inter-regular">Install Android NDK, by clicking on Tools -> SDK Manager -> SDK Tools tab. Select the NDK(side by side) and CMake checkboxes. Click OK to download and install.</li>
+            <li class="inter-regular">Install Android Emulator if you want to run on Android emulators</li>
+        </ol>
 
-        <h2 id="download">Download</h2>
-        <h3 id="releases">Releases</h3>
+        <ol class="dots">
+            <li><span class="inter-medium">Install Swift Toolchain for Android:</span></li>
+        </ol>
+        <ol class="dots intent-space">
+            <li class="inter-regular">Download Swift Toolchain for Android</li>
+            <li class="inter-regular">Run the downloaded installer and follow the setup instructions.</li>
+        </ol>
+
+        <ol class="dots">
+            <li><span class="inter-medium">Verify Swift Toolchain (Already Included in SCADE IDE):</span></li>
+        </ol>
+        <p class="intent-space">
+In the terminal, check with the below commands if Swift Toolchain for Android is installed or not. The following command should print the installed Swift Toolchain version:
+        </p>
+
+        <div class="code-container intent-space">
+            <div class="code-frame-icon copy-code" data-target="codeContent1">
+                <img src="img/code-frame-icon.svg" alt="">
+            </div>
+            <pre id="codeContent1" class="multiline-text">
+scd list-installed
+            </pre>
+        </div>
+
+        <h4>For Linux</h4>
+        <pre>Currently Swift for Android is available for macOS only. It will be available for Linux very soon.</pre>
+
+        <h3>3. Next Steps: Create a Hello World App on Android Studio using Swift</h3>
+        <pre class="bottom-border">Refer <a href="">here</a> to quickly create and run the app on Android Studio using Swift.</pre>
+
+        <h2 id="helloWorld">How to Create a Hello World Application</h2>
+        <ol class="dots">
+            <li class="inter-regular">Open Android Studio.</li>
+            <li class="inter-regular">Begin a new project by selecting "File" > "New" > "New Project."</li>
+        </ol>
+
+        <div class="image-container">
+            <img src="img/helloWorldImage.jpg" alt="">
+        </div>
+
+        <ol class="dots">
+            <li class="inter-regular">Choose a suitable template; for this guide, select "Empty Views Activity."</li>
+            <li class="inter-regular">Note: Ensure you choose "Empty Views Activity," not "Empty Activity."</li>
+            <li class="inter-regular">Provide project details such as name (e.g., SwiftAndroidExample) and package name  (e.g., com.example.myapplication).</li>
+            <li class="inter-regular">Click "Next" to proceed.</li>
+        </ol>
+
+        <h3>Initializing Swift Package Manager (SPM) Project</h3>
+
+        <ol class="dots">
+            <li class="inter-regular">To create a new Swift Package Manager (SPM) project within the app/src/main/swift subdirectory, run the following commands in the terminal:</li>
+        </ol>
+
+        <div class="code-container">
+            <div class="code-frame-icon copy-code" data-target="codeContent2">
+                <img src="img/code-frame-icon.svg" alt="">
+            </div>
+            <pre id="codeContent2" class="multiline-text">
+cd SwiftAndroidExample/app/src/main/swift
+
+swift package init --name SwiftAndroidExample
+            </pre>
+        </div>
+
         <pre>
-Installing Swift
-If you don’t have Swift installed, install it first.
-To test that you have Swift installed, run swift --version from your shell or terminal app.
-Swift comes bundled with the Swift Package Manager (SwiftPM), which manages the distribution of your Swift code, and allows easy importing of other Swift packages into your apps.
+It will set up a new SPM project named SwiftAndroidExample inside the swift subdirectory. This project structure allows you to efficiently manage Swift dependencies and build your Swift code as a separate module within your Android Studio project.
         </pre>
-        <img src="img/test_image.png" alt="">
 
-        <h3 id="snapshots">Snapshot</h3>
+        <img src="img/code_example.jpg" alt="">
+
+        <h3>Configure Gradle in build.gradle</h3>
+
+        <ol class="dots">
+            <li class="inter-regular">In your Android project, access the app/build.gradle file.</li>
+            <li class="inter-regular">Enhance the android section by adding:</li>
+        </ol>
+
+        <div class="code-container">
+            <div class="code-frame-icon copy-code" data-target="codeContent3">
+                <img src="img/code-frame-icon.svg" alt="">
+            </div>
+            <pre id="codeContent3" class="multiline-text">
+<span class="fiolet">android</span> {
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ["lib"]
+        }
+    }
+}
+            </pre>
+        </div>
+
         <pre>
-Installing Swift
-If you don’t have Swift installed, install it first.
-To test that you have Swift installed, run swift --version from your shell or terminal app.
-Swift comes bundled with the Swift Package Manager (SwiftPM), which manages the distribution of your Swift code, and allows easy importing of other Swift packages into your apps.
+This informs Gradle to locate JNI libraries in the lib subdirectory.
         </pre>
 
-        <h3 id="installingSwift">Installing Swift</h3>
-        <pre>
-Installing Swift
-If you don’t have Swift installed, install it first.
-To test that you have Swift installed, run swift --version from your shell or terminal app.
-Swift comes bundled with the Swift Package Manager (SwiftPM), which manages the distribution of your Swift code, and allows easy importing of other Swift packages into your apps.
-        </pre>
-        <img src="img/test_image.png" alt="">
+        <ol class="dots">
+            <li class="inter-regular">In the dependencies section, include:</li>
+        </ol>
 
+        <div class="code-container">
+            <div class="code-frame-icon copy-code" data-target="codeContent4">
+                <img src="img/code-frame-icon.svg" alt="">
+            </div>
+            <pre id="codeContent4" class="multiline-text">
+In the dependencies section, include:
+            </pre>
+        </div>
 
-        <h2 id="install">Install</h2>
-        <pre>
-Installing Swift
-If you don’t have Swift installed, install it first.
-To test that you have Swift installed, run swift --version from your shell or terminal app.
-Swift comes bundled with the Swift Package Manager (SwiftPM), which manages the distribution of your Swift code, and allows easy importing of other Swift packages into your apps.
-        </pre>
+        <p>
+This line instructs Gradle to include .jar libraries in the resulting APK.
+        </p>
 
-        <h2 id="helloWorld">Hello World</h2>
+        <ol class="dots">
+            <li class="inter-regular">At the end of build.gradle, insert the following custom Gradle task:</li>
+        </ol>
 
-        <h3 id="beforeYouBegin">1. Before you begin</h3>
-        <pre>
-Installing Swift
-If you don’t have Swift installed, install it first.
-To test that you have Swift installed, run swift --version from your shell or terminal app.
-Swift comes bundled with the Swift Package Manager (SwiftPM), which manages the distribution of your Swift code, and allows easy importing of other Swift packages into your apps.
-        </pre>
-        <img src="img/test_image.png" alt="">
+        <div class="code-container">
+            <div class="code-frame-icon copy-code" data-target="codeContent5">
+                <img src="img/code-frame-icon.svg" alt="">
+            </div>
+            <pre id="codeContent5" class="multiline-text">
+task buildSwiftProject(type: Exec) {
 
-        <h3 id="createProject">2. Create a project using the template</h3>
-        <pre>
-Installing Swift
-If you don’t have Swift installed, install it first.
-To test that you have Swift installed, run swift --version from your shell or terminal app.
-Swift comes bundled with the Swift Package Manager (SwiftPM), which manages the distribution of your Swift code, and allows easy importing of other Swift packages into your apps.
-        </pre>
-        <img src="img/test_image.png" alt="">
+    commandLine 'scd',
 
-        <h3 id="findProjectFiles">3. Find project files</h3>
-        <pre>
-In this section you will continue to explore Android Studio by becoming familiar with the file structure.
-1.  In Android Studio, take a look at the Project tab. The Project tab shows the files and folders of your project. When you were setting up your project the package name was com.example.greetingcard. You can see that package right here in the Project tab. A package is basically a folder where code is located. Android Studio organizes the project in a directory structure made up of set of packages.
-2.  If necessary, select Android from the drop-down menu in the Project tab.
-This is the standard view and organization of files that you use. It's useful when you write code for your project because you can easily access the files you will be working on in your app. However, if you look at the files in a file browser, such as Finder or Windows Explorer, the file hierarchy is organized very differently.
-        </pre>
-        <img src="img/test_image2.png" alt="">
+            'archive', '--type', 'android',
 
-        <h3 >8. Find project files</h3>
-        <pre>
-•   To create a new project: open Android Studio, click New Project > Empty Activity > Next, enter a name for your project and then configure its settings.
-•   To see how your app looks, use the Preview pane.
-•   Composable functions are like regular functions with a few differences: functions names are capitalized, you add the @Composable annotation before the function, @Composable functions can't return anything.
-•   A Modifier is used to augment or decorate your composable.
-        </pre>
+            '--path', 'src/main/swift',
 
-        <h2 id="goFurther">Go Further </h2>
-        <pre>
-Ready to dive deeper? Here are some hand-picked resources covering various Swift features.
-        </pre>
+            '--platform', 'android-arm64-v8a',
+
+            '--platform', 'android-x86_64'
+}
+
+tasks.whenTaskAdded { task ->
+
+    if (task.name == 'assembleDebug' || task.name == 'assembleRelease') {
+
+        task.dependsOn buildSwiftProject
+
+    }
+
+}
+            </pre>
+        </div>
+
+        <h3>Initialize Swift Runtime and Load JNI Library</h3>
+        <ol class="dots">
+            <li class="inter-regular">In MainActivity.java, add Swift runtime initialization in the onCreate method:</li>
+        </ol>
+
+        <div class="code-container">
+            <div class="code-frame-icon copy-code" data-target="codeContent6">
+                <img src="img/code-frame-icon.svg" alt="">
+            </div>
+            <pre id="codeContent6" class="multiline-text">
+@Override
+
+protected void onCreate(Bundle savedInstanceState) {
+
+    super.onCreate(savedInstanceState);
+
+    setContentView(R.layout.activity_main);
+
+    try {
+
+        org.swift.swiftfoundation.SwiftFoundation.Initialize(this, false);
+
+    } catch (Exception err) {
+
+        android.util.Log.e("Swift", "Can't initialize Swift Foundation: " + err.toString());
+
+    }
+
+    // Continue with your activity code
+
+}
+            </pre>
+        </div>
+
+        <ol class="dots">
+            <li class="inter-regular">Load the JNI library using:</li>
+        </ol>
+
+        <div class="code-container">
+            <div class="code-frame-icon copy-code" data-target="codeContent7">
+                <img src="img/code-frame-icon.svg" alt="">
+            </div>
+            <pre id="codeContent7" class="multiline-text">
+System.loadLibrary("SwiftAndroidExample");
+            </pre>
+        </div>
+
+        <h3>Java Methods Calling Swift Implementation</h3>
+        <p>In your Android application, you can declare Java methods that serve as bridges to Swift code. The implementation of these methods will be written in Swift, allowing seamless integration between the two languages. Here's an example:</p>
+
+        <div class="code-container">
+            <div class="code-frame-icon copy-code" data-target="codeContent8">
+                <img src="img/code-frame-icon.svg" alt="">
+            </div>
+            <pre id="codeContent8" class="multiline-text">
+public class MainActivity extends AppCompatActivity {
+
+    // Declare a native method in Java, with the implementation in Swift
+
+    public native void printHelloWorld();
+
+    // This method is called from Swift code, and the result is sent as an input parameter
+
+    public void printText(String validationResult) {
+
+        // Assuming headerTV is a TextView in your layout
+
+        headerTV.setText(validationResult);
+    }
+
+    // ... Rest of your MainActivity code
+}
+            </pre>
+        </div>
+
+        <p>The Swift implementation of printHelloWorld and the Swift code calling printText will complete the interaction between Java and Swift, providing a seamless integration of functionalities in your Android application.</p>
+
+        <h3>Swift Implementation for Java Methods</h3>
+        <p>The MainActivity_printHelloWorld function is annotated with @_silgen_name to set the native name for the function when called from Java. It takes the JNI environment (env) and the Java activity (activity) as parameters. Inside this function, you create a JObject wrapper for the Java activity and call the updateTasksList function to perform the desired interaction with the Java code.</p>
+
+        <div class="code-container">
+            <div class="code-frame-icon copy-code" data-target="codeContent9">
+                <img src="img/code-frame-icon.svg" alt="">
+            </div>
+            <pre id="codeContent9" class="multiline-text">
+import Dispatch
+
+import Foundation
+
+import Java
+
+// Function to update tasks list in Java
+
+public func updateTasksList(activity: JObject) {
+
+  // Call the Java method "printText" with the message "Hello World!"
+
+  activity.call(method: "printText", "Hello World!")
+
+}
+
+// Use @_silgen_name attribute to set native name for a function called from Java
+
+@_silgen_name("Java_com_example_swiftandroidexample_MainActivity_printHelloWorld")
+
+public func MainActivity_printHelloWorld(
+
+  env: UnsafeMutablePointer&lt;JNIEnv>, activity: JavaObject
+
+) {
+
+  // Create JObject wrapper for the activity object
+
+  let mainActivity = JObject(activity)
+
+  // Call the Swift function to update tasks list in Java
+
+  updateTasksList(activity: mainActivity)
+
+}
+            </pre>
+        </div>
+
+        <p>This Swift code demonstrates the integration of Swift functions with Java methods, allowing for bidirectional communication between Swift and Java in your Android application.</p>
+
+        <h3>Run the Hello World App</h3>
+        <p>Run the Android Appusing Swift’s code like you would run any Android project in Android Studio, on Android Emulator/Physical device. You should be able to see Hello World.</p>
+
+        <img src="img/mobile-code-example.jpg" alt="" class="mobile-code-example">
+
+        <p>Source Code: Please find the source code of Hello World App(Swift for Android) <a href="">here</a></p>
+        <div class="bottom-border"></div>
+
+        <h2 id="goFurther">Go Further</h2>
+        <p>Ready to dive deeper? Here are some hand-picked resources covering various Swift features.</p>
 
         <div class="container">
             <div class="article-block">
-                <img src="img/rectangle.png" alt="">
+                <img src="img/article-image.jpg" alt="">
                 <p>Implement RecyclerView using Swift PM libraries</p>
                 <button>
                     Read article
                 </button>
             </div>
             <div class="article-block">
-                <img src="img/rectangle.png" alt="">
+                <img src="img/article-image.jpg" alt="">
                 <p>Implement RecyclerView using Swift PM libraries</p>
                 <button>
                     Read article
                 </button>
             </div>
             <div class="article-block">
-                <img src="img/rectangle.png" alt="">
+                <img src="img/article-image.jpg" alt="">
                 <p>Implement RecyclerView using Swift PM libraries</p>
                 <button>
                     Read article
                 </button>
             </div>
             <div class="article-block">
-                <img src="img/rectangle.png" alt="">
+                <img src="img/article-image.jpg" alt="">
+                <p>Implement RecyclerView using Swift PM libraries</p>
+                <button>
+                    Read article
+                </button>
+            </div>
+            <div class="article-block">
+                <img src="img/article-image.jpg" alt="">
                 <p>Implement RecyclerView using Swift PM libraries</p>
                 <button>
                     Read article
                 </button>
             </div>
         </div>
-
     </div>
-    <div class="third-column">
-        <div class="tree-container font-inter">
-            <a href="#download">Download</a>
-            <p>
-                <a href="#releases">Releases</a> <br />
-                <a href="#snapshots">Snapshots</a> <br />
-                <a href="#installingSwift">Installing Swift</a> <br />
-            </p>
-            <a href="#install">Install</a>
-            <a href="#helloWorld">Hello World</a>
-            <a href="#goFurther">Go Further</a>
-        </div>
-    </div>
+    <div class="first-column"></div>
 </main>
 <footer>
     <div>
-        <p class="logo-text">LOGO</p>
-        <p >All rights reserved © 2023 SCADE</p>
+        <p >All rights reserved © 2024 SCADE</p>
     </div>
-    <div>
-        <pre>
-contact@scade.io
-New York, NY 10128, United States</pre>
-        <a href="#">
-            <img src="img/x.svg" alt="" width="44">
+    <div class="social-media-container">
+        <a href="https://www.linkedin.com/company/scade-mobile/">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g opacity="0.6">
+                    <rect x="0.5" y="0.5" width="31" height="31" rx="3.5" stroke="#515151"/>
+                    <path d="M11.7539 23.6738V14.228H9.08701V23.6738H11.7539ZM10.4208 12.9376C11.3508 12.9376 11.9297 12.2123 11.9297 11.3059C11.9124 10.379 11.3508 9.67383 10.4385 9.67383C9.52623 9.67383 8.92969 10.379 8.92969 11.3059C8.92969 12.2123 9.50842 12.9376 10.4034 12.9376H10.4208Z" fill="#515151"/>
+                    <path d="M13.9297 23.6738H16.8781V18.2174C16.8781 17.9254 16.8972 17.6337 16.9751 17.425C17.1882 16.8415 17.6733 16.2372 18.4878 16.2372C19.5547 16.2372 19.9815 17.1332 19.9815 18.4467V23.6738H22.9297V18.0714C22.9297 15.0702 21.4751 13.6738 19.5353 13.6738C17.9447 13.6738 17.2464 14.6531 16.8584 15.3201H16.8781V13.903H13.9298C13.9684 14.8198 13.9298 23.6737 13.9298 23.6737L13.9297 23.6738Z" fill="#515151"/>
+                </g>
+            </svg>
         </a>
-        <a href="#">
-            <img src="img/linkedin.svg" alt="" width="44">
+        <a href="https://twitter.com/scade_platform">
+            <svg width="32" height="33" viewBox="0 0 32 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g opacity="0.6" filter="url(#filter0_b_353_42)">
+                    <rect x="0.5" y="0.939453" width="31" height="31" rx="3.5" stroke="black" stroke-opacity="0.6"/>
+                    <g clip-path="url(#clip0_353_42)">
+                        <path d="M20.7807 21.1403L17.0407 15.2991L16.6179 14.6385L13.942 10.46L13.7203 10.1138H10.4326L11.2344 11.3663L14.7918 16.9227L15.2147 17.5826L18.0731 22.0474L18.2948 22.3932H21.5825L20.7807 21.1403ZM18.6852 21.5933L15.7158 16.9553L15.2929 16.2951L11.8472 10.9131H13.3295L16.1163 15.2655L16.5391 15.9258L20.1679 21.5932L18.6852 21.5933Z" fill="black" fill-opacity="0.6"/>
+                        <path d="M15.2934 16.2951L15.7162 16.9553L15.2149 17.5825L11.3684 22.3928H10.4199L14.792 16.9226L15.2934 16.2951Z" fill="black" fill-opacity="0.6"/>
+                        <path d="M21.1867 10.1138L17.0404 15.2991L16.5391 15.9259L16.1162 15.2656L16.6175 14.6385L19.4262 11.1243L20.2382 10.1138H21.1867Z" fill="black" fill-opacity="0.6"/>
+                    </g>
+                </g>
+                <defs>
+                    <filter id="filter0_b_353_42" x="-4" y="-3.56055" width="40" height="40" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+                        <feGaussianBlur in="BackgroundImageFix" stdDeviation="2"/>
+                        <feComposite in2="SourceAlpha" operator="in" result="effect1_backgroundBlur_353_42"/>
+                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_backgroundBlur_353_42" result="shape"/>
+                    </filter>
+                    <clipPath id="clip0_353_42">
+                        <rect width="11.1628" height="12.2791" fill="black" transform="translate(10.4199 10.1138)"/>
+                    </clipPath>
+                </defs>
+            </svg>
         </a>
     </div>
 </footer>
 </body>
 <script>
-    function showThirdColumn() {
-        const thirdColumn = document.querySelector('.third-column');
-        thirdColumn.style.display = thirdColumn.style.display === 'block' ? 'none' : 'block';
+    const btn = document.getElementById("btn");
+    const hamburger = document.getElementById("hamburger");
+    const thirdColumn = document.querySelector('.third-column');
+
+    btn.onclick = function (){
+        const isActive = hamburger.classList.contains("is-active");
+
+        hamburger.classList.toggle("is-active", !isActive);
+        thirdColumn.classList.toggle("show", !isActive);
+        thirdColumn.classList.toggle("hide", isActive);
+
+        checkThirdColumn();
     }
+
+    function checkThirdColumn () {
+        thirdColumn.style.display === 'block'
+            ? setTimeout(function () { thirdColumn.style.display = 'none'; }, 500)
+            : thirdColumn.style.display = 'block';
+    }
+    function toggleThirdColumnVisibility() {
+        const screenWidth = getScreenWidth();
+
+        // Check if the screen width is more than 992px
+        (screenWidth >= 992)
+            ? (btn.style.display = 'none', thirdColumn.style.display = 'block')
+            : (btn.style.display = 'block', thirdColumn.style.display = 'none',
+                hamburger.classList.remove("is-active"));
+    }
+    function getScreenWidth() {
+        return window.innerWidth;
+    }
+
+    window.addEventListener('resize', toggleThirdColumnVisibility);
+    toggleThirdColumnVisibility();
+
+    // Get all elements with the 'copy-code' class
+    const copyCodeButtons = document.querySelectorAll('.copy-code');
+
+    // Attach click event listener to each button
+    copyCodeButtons.forEach(function(button) {
+        button.addEventListener('click', function() {
+            const targetId = button.getAttribute('data-target');
+
+            const codeContent = document.getElementById(targetId).innerText;
+
+            const textarea = document.createElement('textarea');
+            textarea.value = codeContent;
+
+            document.body.appendChild(textarea);
+
+            textarea.select();
+            textarea.setSelectionRange(0, 99999); // For mobile devices
+
+            document.execCommand('copy');
+
+            document.body.removeChild(textarea);
+
+            alert('Code copied to clipboard!');
+        });
+    });
+    const treeLinks = document.querySelectorAll('.tree-container a');
+    let observer;
+
+    function debounce(func, wait) {
+        let timeout;
+        return function () {
+            const context = this, args = arguments;
+            clearTimeout(timeout);
+            timeout = setTimeout(function () {
+                func.apply(context, args);
+            }, wait);
+        };
+    }
+
+    function handleIntersection(entries) {
+        entries.forEach(function (entry) {
+            const targetId = entry.target.id;
+            if (entry.isIntersecting) {
+                treeLinks.forEach(function (link) {
+                    link.classList.toggle('current', link.getAttribute('href') === '#' + targetId);
+                });
+            }
+        });
+    }
+
+    function findClosestDiv() {
+        let closestDiv = null;
+        let closestDistance = Infinity;
+
+        document.querySelectorAll('.tree-container a').forEach(function (link) {
+            const targetId = link.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            if (targetElement) {
+                const distance = Math.abs(targetElement.getBoundingClientRect().top);
+                if (distance < closestDistance) {
+                    closestDiv = link;
+                    closestDistance = distance;
+                }
+            }
+        });
+
+        return closestDiv;
+    }
+
+    document.querySelectorAll('.tree-container a').forEach(function (link) {
+        const targetId = link.getAttribute('href').substring(1);
+        const targetElement = document.getElementById(targetId);
+        if (targetElement) {
+            observer = new IntersectionObserver(handleIntersection, { threshold: 0.5 });
+            observer.observe(targetElement);
+        }
+
+        link.addEventListener('click', function() {
+            if (getScreenWidth() <= 992){
+                hamburger.classList.toggle("is-active", false);
+                thirdColumn.classList.toggle("show", false);
+                thirdColumn.classList.toggle("hide");
+                checkThirdColumn();
+            }
+        });
+    });
+
+    const handleScrollDebounced = debounce(function () {
+        if (observer) {
+            observer.disconnect();
+
+            const closestLink = findClosestDiv();
+
+            treeLinks.forEach(function (link) {
+                link.classList.remove('current');
+            });
+
+            if (closestLink) {
+                closestLink.classList.add('current');
+            }
+
+            document.querySelectorAll('.tree-container a').forEach(function (link) {
+                const targetId = link.getAttribute('href').substring(1);
+                const targetElement = document.getElementById(targetId);
+                if (targetElement) {
+                    observer.observe(targetElement);
+                }
+            });
+        }
+    }, 100);
+
+    window.addEventListener('scroll', handleScrollDebounced);
+
+    function insertLineBreaks() {
+        const multilineElements = document.querySelectorAll('.main .second-column .code-container .multiline-text');
+
+        multilineElements.forEach(function (preElement) {
+            const textContent = preElement.textContent;
+
+            // Set a threshold for when to insert line breaks
+            const threshold = 300; // Adjust this value as needed
+
+            if (preElement.clientWidth < threshold) {
+                const breakIndex = textContent.lastIndexOf('.', threshold);
+
+                if (breakIndex !== -1) {
+                    preElement.innerHTML = textContent.substring(0, breakIndex + 1) + '<br>' + textContent.substring(breakIndex + 1);
+                }
+            }
+        });
+    }
+
+    // Call the function on page load and window resize
+    document.addEventListener('DOMContentLoaded', insertLineBreaks);
+    window.addEventListener('resize', insertLineBreaks);
 </script>
 </html>
