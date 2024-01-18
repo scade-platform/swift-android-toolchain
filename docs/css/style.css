@@ -165,7 +165,7 @@ footer .social-media-container svg {
     padding: 0 4px;
 }
 
-@media (min-width: 993px) and (max-width: 1190px) {
+@media (min-width: 993px) and (max-width: 1300px) {
     .content .swift-for-android-text {
         font-size: 48px;
     }
