@@ -1,6 +1,7 @@
 html , body {
     width: 100% !important;
     overflow-x: hidden !important;
+    overflow-y: hidden !important;
 }
 
 body {
@@ -37,14 +38,6 @@ main {
     justify-content: space-between;
 }
 
-.content {
-    color: rgba(255, 255, 255, 1);
-    width: 100%;
-    margin-top: auto;
-    font-size: 1.7vw;
-    font-family: 'Mona Sans', sans-serif;
-}
-
 .first-column {
     margin-bottom: 5vw;
 }
@@ -62,8 +55,18 @@ main {
 .second-column {
     position: absolute;
     left: 55%;
-    bottom: -5%;
+    top: 28vh;
+    /*bottom: -5%;*/
     padding-left: 5%;
+}
+
+.content {
+    color: rgba(255, 255, 255, 1);
+    width: 100%;
+    /*margin-top: auto;*/
+    margin-top: 25vh;
+    font-size: 1.7vw;
+    font-family: 'Mona Sans', sans-serif;
 }
 
 .content .download {
@@ -113,7 +116,7 @@ main {
 
 .content .swift-for-android-text {
     font-family: 'Mona Sans Expanded', sans-serif;
-    font-size: 4.5vw;
+    font-size: 4vw;
     line-height: 6.01vw;
     font-weight: 500;
     margin: 0;
@@ -167,6 +170,9 @@ footer .social-media-container svg {
 }
 
 @media (max-width: 992px) {
+    html, body {
+        overflow-y: scroll !important;
+    }
     body {
         overflow-y: scroll;
         overflow-x: hidden;
@@ -186,6 +192,7 @@ footer .social-media-container svg {
         flex-direction: column;
         max-height: none;
         padding-top: 300px;
+        margin-top: auto;
     }
 
     .line {
@@ -207,6 +214,8 @@ footer .social-media-container svg {
         order: 2;
         padding: 0;
         align-items: start;
+        bottom: -5%;
+        top: auto;
     }
 
     .third-column {
