@@ -40,9 +40,9 @@ Before you begin Swift development for Android, make sure you have the following
         <ol>
             <li>Xcode (For macOS): <span class="inter-regular">If you don't have Xcode installed, it is recommended to install it from the Mac App Store. Xcode includes Swift, and the installation of Xcode will automatically include Swift as part of the development tools.</span></li>
             <li>Android Studio: <span class="inter-regular">Android Studio is the official integrated development environment (IDE) for Android app development. You can download Android Studio from the official website: <a
-                    href=""> Android Studio Download.</a></span></li>
+                    href="https://developer.android.com/studio"> Android Studio Download.</a></span></li>
             <li>SCADE IDE <span class="inter-regular">(Optional): If you are interested in using Scade for Swift development, you can download it from SCADE's official website: <a
-                    href="">Scade Download.</a></span></li>
+                    href="https://www.scade.io/download">Scade Download.</a></span></li>
         </ol>
         <h3 id="install">2. How to Install Swift for Android</h3>
         <h4>For macOS</h4>
@@ -57,7 +57,7 @@ Before setting up Swift for Android, ensure that you have Android Studio install
             <li class="inter-regular">Run the downloaded installer and follow the setup instructions.</li>
             <li class="inter-regular">Launch Android Studio eand complete the initial configuration, including the installation of the Android SDK.</li>
             <li class="inter-regular">Install Android NDK, by clicking on Tools -> SDK Manager -> SDK Tools tab. Select the NDK(side by side) and CMake checkboxes. Click OK to download and install.</li>
-            <li class="inter-regular">Install Android Emulator if you want to run on Android emulators</li>
+            <li class="inter-regular"><a href="https://developer.android.com/studio/run/emulator">Install Android Emulator</a> if you want to run on Android emulators</li>
         </ol>
 
         <ol class="dots">
@@ -88,7 +88,7 @@ scd list-installed
         <pre>Currently Swift for Android is available for macOS only. It will be available for Linux very soon.</pre>
 
         <h3>3. Next Steps: Create a Hello World App on Android Studio using Swift</h3>
-        <pre class="bottom-border">Refer <a href="">here</a> to quickly create and run the app on Android Studio using Swift.</pre>
+        <pre class="bottom-border">Refer <a href="https://github.com/6vedant/swift-for-android-docs/blob/main/HowToCreateHelloWorldApp.md">here</a> to quickly create and run the app on Android Studio using Swift.</pre>
 
         <h2 id="helloWorld">How to Create a Hello World Application</h2>
         <ol class="dots">
@@ -337,7 +337,7 @@ public func MainActivity_printHelloWorld(
 
         <img src="img/mobile-code-example.jpg" alt="" class="mobile-code-example">
 
-        <p>Source Code: Please find the source code of Hello World App(Swift for Android) <a href="">here</a></p>
+        <p>Source Code: Please find the source code of Hello World App(Swift for Android) <a href="https://github.com/6vedant/swift-for-android-hello-world">here</a></p>
         <div class="bottom-border"></div>
 
         <h2 id="goFurther">Go Further</h2>
@@ -347,38 +347,44 @@ public func MainActivity_printHelloWorld(
             <div class="article-block">
                 <img src="img/article-image.jpg" alt="">
                 <p>Implement RecyclerView using Swift PM libraries</p>
-                <button>
-                    Read article
-                </button>
+                <a href="https://medium.com/@SCADE/implement-recyclerview-using-swift-pm-libraries-eacc1efd48af">
+                    <button>
+                        Read article
+                    </button>
+                </a>
             </div>
             <div class="article-block">
                 <img src="img/article-image.jpg" alt="">
-                <p>Implement RecyclerView using Swift PM libraries</p>
-                <button>
-                    Read article
-                </button>
+                <p>Swift for Android: How to use Swift-Crypto with Android Studio</p>
+                <a href="https://medium.com/@SCADE/swift-for-android-how-to-use-swift-crypto-with-android-studio-5dd7ecaf47ac">
+                    <button>
+                        Read article
+                    </button>
+                </a>
             </div>
             <div class="article-block">
                 <img src="img/article-image.jpg" alt="">
-                <p>Implement RecyclerView using Swift PM libraries</p>
-                <button>
-                    Read article
-                </button>
+                <p>Using Swift PM libraries in the Android Studio projects</p>
+                <a href="https://medium.com/@SCADE/using-swift-pm-libraries-in-the-android-studio-projects-7cef47c300bf">
+                    <button>
+                        Read article
+                    </button>
+                </a>
             </div>
-            <div class="article-block">
-                <img src="img/article-image.jpg" alt="">
-                <p>Implement RecyclerView using Swift PM libraries</p>
-                <button>
-                    Read article
-                </button>
-            </div>
-            <div class="article-block">
-                <img src="img/article-image.jpg" alt="">
-                <p>Implement RecyclerView using Swift PM libraries</p>
-                <button>
-                    Read article
-                </button>
-            </div>
+<!--            <div class="article-block">-->
+<!--                <img src="img/article-image.jpg" alt="">-->
+<!--                <p>Implement RecyclerView using Swift PM libraries</p>-->
+<!--                <button>-->
+<!--                    Read article-->
+<!--                </button>-->
+<!--            </div>-->
+<!--            <div class="article-block">-->
+<!--                <img src="img/article-image.jpg" alt="">-->
+<!--                <p>Implement RecyclerView using Swift PM libraries</p>-->
+<!--                <button>-->
+<!--                    Read article-->
+<!--                </button>-->
+<!--            </div>-->
         </div>
     </div>
     <div class="first-column"></div>
@@ -532,7 +538,7 @@ public func MainActivity_printHelloWorld(
         const targetId = link.getAttribute('href').substring(1);
         const targetElement = document.getElementById(targetId);
         if (targetElement) {
-            observer = new IntersectionObserver(handleIntersection, { threshold: 0.5 });
+            observer = new IntersectionObserver(handleIntersection, { threshold: 1 });
             observer.observe(targetElement);
         }
 
