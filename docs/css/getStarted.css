@@ -155,6 +155,10 @@ main .third-column .tree-container p a{
 
 }
 
+main .third-column .tree-container p a.active {
+    color: red;
+}
+
 main .third-column .tree-container p a .current-dot {
     padding-top: 5px;
     padding-right: 12px;
@@ -347,6 +351,7 @@ main .second-column .container .article-block{
 main .second-column .container .article-block img {
     width: 100%;
     height: auto;
+    max-height: 150px;
     margin-bottom: 10px;
 }
 

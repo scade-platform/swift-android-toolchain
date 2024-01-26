@@ -83,6 +83,14 @@ main {
     font-family: 'Mona Sans', sans-serif;
 }
 
+.content .download:hover {
+    background: rgba(255, 45, 87, 1);
+}
+
+.content .download:active {
+    background: rgba(210, 4, 45, 1);
+}
+
 .content .download-link {
     text-decoration: none;
 }
@@ -100,6 +108,14 @@ main {
     margin-left: 1.04vw;
     cursor: pointer;
     font-family: 'Mona Sans', sans-serif;
+}
+
+.content .get-started:hover {
+    border-color: rgba(255, 45, 87, 1);
+}
+
+.content .get-started:active {
+    border-color: rgba(178, 0, 36, 1);
 }
 
 .content .third-column p {
