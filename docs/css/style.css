@@ -182,8 +182,10 @@ footer .social-media-container svg {
 }
 
 @media (max-width: 992px) {
-    html, body {
+    html, body, footer {
         overflow-y: scroll !important;
+        position: relative;
+        z-index: 1;
     }
     body {
         overflow-y: scroll;
@@ -192,7 +194,17 @@ footer .social-media-container svg {
         background-position: 69% top;
         background-attachment: scroll;
         background-size: 1190px auto;
-        background-color: rgb(18, 8, 66);
+    }
+
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to bottom, rgba(12, 12, 44, 0.1) 0%, rgba(12, 12, 44, 0.1) 330px, rgba(12, 12, 44, 0.9) 660px, rgba(12, 12, 44, 1) 100%);
+        pointer-events: none;
     }
 
     header .logo {
@@ -258,13 +270,15 @@ footer .social-media-container svg {
         height: 59px;
         margin-top: 16px;
         font-size: 16px;
+        box-sizing: border-box;
     }
 
     .content .get-started {
         width: 100%;
         height: 59px;
-        margin: 56px 0 0;
+        margin: 59px 0;
         font-size: 16px;
+        box-sizing: border-box;
     }
 
     .content .third-column p {
