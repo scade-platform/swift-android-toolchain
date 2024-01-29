@@ -365,7 +365,10 @@ main .second-column .container .article-block p {
     margin-bottom: auto;
 }
 
-main .second-column .container .article-block button {
+main .second-column .container .article-block a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 50px;
     border-radius: 4px;
     background: transparent;
@@ -378,9 +381,11 @@ main .second-column .container .article-block button {
     font-family: 'Inter', sans-serif;
     margin-top: auto;
     margin-bottom: 18px;
+    text-decoration: none;
+    text-align: center;
 }
 
-main .second-column .container .article-block button:hover {
+main .second-column .container .article-block a:hover {
     background: rgba(241, 8, 55, 1);
     color: rgba(255, 255, 255, 1);
 }
@@ -415,6 +420,7 @@ footer .social-media-container svg {
 
 @media (max-width: 992px) {
     header {
+        top: 0;
         position: fixed;
         background: #FFFFFF;
         width: 90%;
@@ -426,7 +432,11 @@ footer .social-media-container svg {
     }
 
     main {
-        margin-top: 80px;
+        margin-top: 140px;
+        box-sizing: border-box;
+        position: fixed;
+        overflow-y: auto;
+        height: calc(100vh - 100px);
     }
 
     main .first-column {
@@ -479,6 +489,12 @@ footer .social-media-container svg {
 
     main .show {
         animation: slideIn 0.5s ease-out;
+    }
+
+    .footer {
+        padding-bottom: 100px;
+        width: 100%;
+        margin-top: 0;
     }
 
     @keyframes slideIn {
