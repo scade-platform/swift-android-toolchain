@@ -390,6 +390,10 @@ main .second-column .container .article-block a:hover {
     color: rgba(255, 255, 255, 1);
 }
 
+main .footer {
+    display: none;
+}
+
 footer {
     background-color: transparent;
     padding: 40px 5%;
