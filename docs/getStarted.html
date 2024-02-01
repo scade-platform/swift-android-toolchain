@@ -24,21 +24,22 @@
 <main>
     <div class="third-column">
         <div class="tree-container">
-            <a href="#gettingStarted">Getting started</a>
-            <p>
-                <a href="#prerequisites"><span class="current-dot">•</span>Prerequisites</a><br>
-                <a href="#install"><span class="current-dot">•</span>Install</a><br>
-                <a href="#helloWorld"><span class="current-dot">•</span>Hello World</a><br>
-                <a href="#goFurther"><span class="current-dot">•</span>Go Further</a><br>
+            <a href="#prerequisites" class="tree-items" >Getting started</a>
+            <p id="navbar__list">
+                <a href="#prerequisites" class="menu-items tree-items current"><span class="current-dot">•</span>Prerequisites</a><br>
+                <a href="#install" class="menu-items tree-items"><span class="current-dot">•</span>Install</a><br>
+                <a href="#helloWorld" class="menu-items tree-items"><span class="current-dot">•</span>Hello World</a><br>
+                <a href="#goFurther" class="menu-items tree-items"><span class="current-dot">•</span>Go Further</a><br>
             </p>
         </div>
     </div>
     <div class="second-column">
+        <div id="prerequisites" class="sec">
             <h1 class="bottom-border" id="gettingStarted">Getting Started with Swift for Android</h1>
-        <div id="prerequisites" class="content-div">
+            <!--        <div id="prerequisites" class="content-div">-->
             <h3 >1. Prerequisites</h3>
             <p>
-    Before you begin Swift development for Android, make sure you have the following tools installed:
+                Before you begin Swift development for Android, make sure you have the following tools installed:
             </p>
             <ol>
                 <li>Xcode (For macOS): <span class="inter-regular">If you don't have Xcode installed, it is recommended to install it from the Mac App Store. Xcode includes Swift, and the installation of Xcode will automatically include Swift as part of the development tools.</span></li>
@@ -48,11 +49,11 @@
                         href="https://www.scade.io/download">Scade Download.</a></span></li>
             </ol>
         </div>
-        <div id="install" class="content-div">
+        <div id="install" class="sec">
             <h3 >2. How to Install Swift for Android</h3>
             <h4>For macOS</h4>
             <p>
-    Before setting up Swift for Android, ensure that you have Android Studio installed on your macOS. Follow these steps:
+                Before setting up Swift for Android, ensure that you have Android Studio installed on your macOS. Follow these steps:
             </p>
             <ol class="dots">
                 <li><span class="inter-medium">Install Android Studio:</span></li>
@@ -77,7 +78,7 @@
                 <li><span class="inter-medium">Verify Swift Toolchain (Already Included in SCADE IDE):</span></li>
             </ol>
             <p class="intent-space">
-    In the terminal, check with the below commands if Swift Toolchain for Android is installed or not. The following command should print the installed Swift Toolchain version:
+                In the terminal, check with the below commands if Swift Toolchain for Android is installed or not. The following command should print the installed Swift Toolchain version:
             </p>
 
             <div class="code-container intent-space">
@@ -92,63 +93,64 @@
             <h4>For Linux</h4>
             <pre>Currently Swift for Android is available for macOS only. It will be available for Linux very soon.</pre>
 
-        </div>
-        <h3 id="helloWorld" class="content-div">3. Next Steps: Create a Hello World App on Android Studio using Swift</h3>
-        <pre class="bottom-border">Refer <a href="https://github.com/6vedant/swift-for-android-docs/blob/main/HowToCreateHelloWorldApp.md">here</a> to quickly create and run the app on Android Studio using Swift.</pre>
-
-        <h2>How to Create a Hello World Application</h2>
-        <ol class="dots">
-            <li class="inter-regular">Open Android Studio.</li>
-            <li class="inter-regular">Begin a new project by selecting "File" > "New" > "New Project."</li>
-        </ol>
-
-        <div class="image-container">
-            <img src="img/helloWorldImage.jpg" alt="">
+            <h3>3. Next Steps: Create a Hello World App on Android Studio using Swift</h3>
+            <pre class="bottom-border">Refer <a href="https://github.com/6vedant/swift-for-android-docs/blob/main/HowToCreateHelloWorldApp.md">here</a> to quickly create and run the app on Android Studio using Swift.</pre>
         </div>
 
-        <ol class="dots">
-            <li class="inter-regular">Choose a suitable template; for this guide, select "Empty Views Activity."</li>
-            <li class="inter-regular">Note: Ensure you choose "Empty Views Activity," not "Empty Activity."</li>
-            <li class="inter-regular">Provide project details such as name (e.g., SwiftAndroidExample) and package name  (e.g., com.example.myapplication).</li>
-            <li class="inter-regular">Click "Next" to proceed.</li>
-        </ol>
+        <div id="helloWorld" class="sec">
+            <h2>How to Create a Hello World Application</h2>
+            <ol class="dots">
+                <li class="inter-regular">Open Android Studio.</li>
+                <li class="inter-regular">Begin a new project by selecting "File" > "New" > "New Project."</li>
+            </ol>
 
-        <h3>Initializing Swift Package Manager (SPM) Project</h3>
-
-        <ol class="dots">
-            <li class="inter-regular">To create a new Swift Package Manager (SPM) project within the app/src/main/swift subdirectory, run the following commands in the terminal:</li>
-        </ol>
-
-        <div class="code-container">
-            <div class="code-frame-icon copy-code" data-target="codeContent2">
-                <img src="img/code-frame-icon.svg" alt="">
+            <div class="image-container">
+                <img src="img/helloWorldImage.jpg" alt="">
             </div>
-            <pre id="codeContent2" class="multiline-text">
+
+            <ol class="dots">
+                <li class="inter-regular">Choose a suitable template; for this guide, select "Empty Views Activity."</li>
+                <li class="inter-regular">Note: Ensure you choose "Empty Views Activity," not "Empty Activity."</li>
+                <li class="inter-regular">Provide project details such as name (e.g., SwiftAndroidExample) and package name  (e.g., com.example.myapplication).</li>
+                <li class="inter-regular">Click "Next" to proceed.</li>
+            </ol>
+
+            <h3>Initializing Swift Package Manager (SPM) Project</h3>
+
+            <ol class="dots">
+                <li class="inter-regular">To create a new Swift Package Manager (SPM) project within the app/src/main/swift subdirectory, run the following commands in the terminal:</li>
+            </ol>
+
+            <div class="code-container">
+                <div class="code-frame-icon copy-code" data-target="codeContent2">
+                    <img src="img/code-frame-icon.svg" alt="">
+                </div>
+                <pre id="codeContent2" class="multiline-text">
 cd SwiftAndroidExample/app/src/main/swift
 
 swift package init --name SwiftAndroidExample
             </pre>
-        </div>
+            </div>
 
-        <pre>
+            <pre>
 It will set up a new SPM project named SwiftAndroidExample inside the swift subdirectory. This project structure allows you to efficiently manage Swift dependencies and build your Swift code as a separate module within your Android Studio project.
         </pre>
 
-        <img src="img/code_example.jpg" alt="">
+            <img src="img/code_example.jpg" alt="">
 
-        <h3>Configure Gradle in build.gradle</h3>
+            <h3>Configure Gradle in build.gradle</h3>
 
-        <ol class="dots">
-            <li class="inter-regular">In your Android project, access the app/build.gradle file.</li>
-            <li class="inter-regular">Enhance the android section by adding:</li>
-        </ol>
+            <ol class="dots">
+                <li class="inter-regular">In your Android project, access the app/build.gradle file.</li>
+                <li class="inter-regular">Enhance the android section by adding:</li>
+            </ol>
 
-        <div class="code-container">
-            <div class="code-frame-icon copy-code" data-target="codeContent3">
-                <img src="img/code-frame-icon.svg" alt="">
-            </div>
-            <pre id="codeContent3" class="multiline-text">
-<span class="fiolet">android</span> {
+            <div class="code-container">
+                <div class="code-frame-icon copy-code" data-target="codeContent3">
+                    <img src="img/code-frame-icon.svg" alt="">
+                </div>
+                <pre id="codeContent3" class="multiline-text">
+<span class="violet">android</span> {
     sourceSets {
         main {
             jniLibs.srcDirs = ["lib"]
@@ -156,38 +158,38 @@ It will set up a new SPM project named SwiftAndroidExample inside the swift subd
     }
 }
             </pre>
-        </div>
+            </div>
 
-        <pre>
+            <pre>
 This informs Gradle to locate JNI libraries in the lib subdirectory.
         </pre>
 
-        <ol class="dots">
-            <li class="inter-regular">In the dependencies section, include:</li>
-        </ol>
+            <ol class="dots">
+                <li class="inter-regular">In the dependencies section, include:</li>
+            </ol>
 
-        <div class="code-container">
-            <div class="code-frame-icon copy-code" data-target="codeContent4">
-                <img src="img/code-frame-icon.svg" alt="">
-            </div>
-            <pre id="codeContent4" class="multiline-text">
+            <div class="code-container">
+                <div class="code-frame-icon copy-code" data-target="codeContent4">
+                    <img src="img/code-frame-icon.svg" alt="">
+                </div>
+                <pre id="codeContent4" class="multiline-text">
 In the dependencies section, include:
             </pre>
-        </div>
-
-        <p>
-This line instructs Gradle to include .jar libraries in the resulting APK.
-        </p>
-
-        <ol class="dots">
-            <li class="inter-regular">At the end of build.gradle, insert the following custom Gradle task:</li>
-        </ol>
-
-        <div class="code-container">
-            <div class="code-frame-icon copy-code" data-target="codeContent5">
-                <img src="img/code-frame-icon.svg" alt="">
             </div>
-            <pre id="codeContent5" class="multiline-text">
+
+            <p>
+                This line instructs Gradle to include .jar libraries in the resulting APK.
+            </p>
+
+            <ol class="dots">
+                <li class="inter-regular">At the end of build.gradle, insert the following custom Gradle task:</li>
+            </ol>
+
+            <div class="code-container">
+                <div class="code-frame-icon copy-code" data-target="codeContent5">
+                    <img src="img/code-frame-icon.svg" alt="">
+                </div>
+                <pre id="codeContent5" class="multiline-text">
 task buildSwiftProject(type: Exec) {
 
     commandLine 'scd',
@@ -211,18 +213,18 @@ tasks.whenTaskAdded { task ->
 
 }
             </pre>
-        </div>
-
-        <h3>Initialize Swift Runtime and Load JNI Library</h3>
-        <ol class="dots">
-            <li class="inter-regular">In MainActivity.java, add Swift runtime initialization in the onCreate method:</li>
-        </ol>
-
-        <div class="code-container">
-            <div class="code-frame-icon copy-code" data-target="codeContent6">
-                <img src="img/code-frame-icon.svg" alt="">
             </div>
-            <pre id="codeContent6" class="multiline-text">
+
+            <h3>Initialize Swift Runtime and Load JNI Library</h3>
+            <ol class="dots">
+                <li class="inter-regular">In MainActivity.java, add Swift runtime initialization in the onCreate method:</li>
+            </ol>
+
+            <div class="code-container">
+                <div class="code-frame-icon copy-code" data-target="codeContent6">
+                    <img src="img/code-frame-icon.svg" alt="">
+                </div>
+                <pre id="codeContent6" class="multiline-text">
 @Override
 
 protected void onCreate(Bundle savedInstanceState) {
@@ -245,29 +247,29 @@ protected void onCreate(Bundle savedInstanceState) {
 
 }
             </pre>
-        </div>
-
-        <ol class="dots">
-            <li class="inter-regular">Load the JNI library using:</li>
-        </ol>
-
-        <div class="code-container">
-            <div class="code-frame-icon copy-code" data-target="codeContent7">
-                <img src="img/code-frame-icon.svg" alt="">
             </div>
-            <pre id="codeContent7" class="multiline-text">
+
+            <ol class="dots">
+                <li class="inter-regular">Load the JNI library using:</li>
+            </ol>
+
+            <div class="code-container">
+                <div class="code-frame-icon copy-code" data-target="codeContent7">
+                    <img src="img/code-frame-icon.svg" alt="">
+                </div>
+                <pre id="codeContent7" class="multiline-text">
 System.loadLibrary("SwiftAndroidExample");
             </pre>
-        </div>
-
-        <h3>Java Methods Calling Swift Implementation</h3>
-        <p>In your Android application, you can declare Java methods that serve as bridges to Swift code. The implementation of these methods will be written in Swift, allowing seamless integration between the two languages. Here's an example:</p>
-
-        <div class="code-container">
-            <div class="code-frame-icon copy-code" data-target="codeContent8">
-                <img src="img/code-frame-icon.svg" alt="">
             </div>
-            <pre id="codeContent8" class="multiline-text">
+
+            <h3>Java Methods Calling Swift Implementation</h3>
+            <p>In your Android application, you can declare Java methods that serve as bridges to Swift code. The implementation of these methods will be written in Swift, allowing seamless integration between the two languages. Here's an example:</p>
+
+            <div class="code-container">
+                <div class="code-frame-icon copy-code" data-target="codeContent8">
+                    <img src="img/code-frame-icon.svg" alt="">
+                </div>
+                <pre id="codeContent8" class="multiline-text">
 public class MainActivity extends AppCompatActivity {
 
     // Declare a native method in Java, with the implementation in Swift
@@ -286,18 +288,18 @@ public class MainActivity extends AppCompatActivity {
     // ... Rest of your MainActivity code
 }
             </pre>
-        </div>
-
-        <p>The Swift implementation of printHelloWorld and the Swift code calling printText will complete the interaction between Java and Swift, providing a seamless integration of functionalities in your Android application.</p>
-
-        <h3>Swift Implementation for Java Methods</h3>
-        <p>The MainActivity_printHelloWorld function is annotated with @_silgen_name to set the native name for the function when called from Java. It takes the JNI environment (env) and the Java activity (activity) as parameters. Inside this function, you create a JObject wrapper for the Java activity and call the updateTasksList function to perform the desired interaction with the Java code.</p>
-
-        <div class="code-container">
-            <div class="code-frame-icon copy-code" data-target="codeContent9">
-                <img src="img/code-frame-icon.svg" alt="">
             </div>
-            <pre id="codeContent9" class="multiline-text">
+
+            <p>The Swift implementation of printHelloWorld and the Swift code calling printText will complete the interaction between Java and Swift, providing a seamless integration of functionalities in your Android application.</p>
+
+            <h3>Swift Implementation for Java Methods</h3>
+            <p>The MainActivity_printHelloWorld function is annotated with @_silgen_name to set the native name for the function when called from Java. It takes the JNI environment (env) and the Java activity (activity) as parameters. Inside this function, you create a JObject wrapper for the Java activity and call the updateTasksList function to perform the desired interaction with the Java code.</p>
+
+            <div class="code-container">
+                <div class="code-frame-icon copy-code" data-target="codeContent9">
+                    <img src="img/code-frame-icon.svg" alt="">
+                </div>
+                <pre id="codeContent9" class="multiline-text">
 import Dispatch
 
 import Foundation
@@ -334,19 +336,20 @@ public func MainActivity_printHelloWorld(
 
 }
             </pre>
+            </div>
+
+            <p>This Swift code demonstrates the integration of Swift functions with Java methods, allowing for bidirectional communication between Swift and Java in your Android application.</p>
+
+            <h3>Run the Hello World App</h3>
+            <p>Run the Android Appusing Swift’s code like you would run any Android project in Android Studio, on Android Emulator/Physical device. You should be able to see Hello World.</p>
+
+            <img src="img/mobile-code-example.jpg" alt="" class="mobile-code-example">
+
+            <p class="bottom-border null-margin">Source Code: Please find the source code of Hello World App(Swift for Android) <a href="https://github.com/6vedant/swift-for-android-hello-world">here</a></p>
         </div>
 
-        <p>This Swift code demonstrates the integration of Swift functions with Java methods, allowing for bidirectional communication between Swift and Java in your Android application.</p>
-
-        <h3>Run the Hello World App</h3>
-        <p>Run the Android Appusing Swift’s code like you would run any Android project in Android Studio, on Android Emulator/Physical device. You should be able to see Hello World.</p>
-
-        <img src="img/mobile-code-example.jpg" alt="" class="mobile-code-example">
-
-        <p>Source Code: Please find the source code of Hello World App(Swift for Android) <a href="https://github.com/6vedant/swift-for-android-hello-world">here</a></p>
-        <div class="bottom-border"></div>
-
-        <div id="goFurther" class="content-div">
+        <div id="goFurther" class="sec">
+            <!--        <div id="goFurther" class="content-div">-->
             <h2>Go Further</h2>
             <p>Ready to dive deeper? Here are some hand-picked resources covering various Swift features.</p>
 
@@ -355,21 +358,21 @@ public func MainActivity_printHelloWorld(
                     <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*PHDBCUdDuiHZz2ICcovJ0Q.png" alt="">
                     <p>Implement RecyclerView using Swift PM libraries</p>
                     <a href="https://medium.com/@SCADE/implement-recyclerview-using-swift-pm-libraries-eacc1efd48af">
-                            Read article
+                        Read article
                     </a>
                 </div>
                 <div class="article-block">
                     <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*Y2Cf3O14bhEONgst7tHIPg.png" alt="">
                     <p>Swift for Android: How to use Swift-Crypto with Android Studio</p>
                     <a href="https://medium.com/@SCADE/swift-for-android-how-to-use-swift-crypto-with-android-studio-5dd7ecaf47ac">
-                            Read article
+                        Read article
                     </a>
                 </div>
                 <div class="article-block">
                     <img src="https://miro.medium.com/v2/resize:fit:1400/format:webp/1*ZSmouh2vL1nA91rOwSYCDg.png" alt="">
                     <p>Using Swift PM libraries in the Android Studio projects</p>
                     <a href="https://medium.com/@SCADE/using-swift-pm-libraries-in-the-android-studio-projects-7cef47c300bf">
-                            Read article
+                        Read article
                     </a>
                 </div>
             </div>
@@ -414,7 +417,6 @@ public func MainActivity_printHelloWorld(
             </div>
         </div>
     </div>
-    <div class="first-column"></div>
 </main>
 <footer>
     <div>
@@ -461,7 +463,7 @@ public func MainActivity_printHelloWorld(
     const hamburger = document.getElementById("hamburger");
     const thirdColumn = document.querySelector('.third-column');
 
-    btn.onclick = function (){
+    function onClickHamburgerMenu(){
         const isActive = hamburger.classList.contains("is-active");
 
         hamburger.classList.toggle("is-active", !isActive);
@@ -470,6 +472,8 @@ public func MainActivity_printHelloWorld(
 
         checkThirdColumn();
     }
+
+    btn.onclick = onClickHamburgerMenu;
 
     function checkThirdColumn () {
         thirdColumn.style.display === 'block'
@@ -518,8 +522,6 @@ public func MainActivity_printHelloWorld(
         });
     });
 
-    const treeLinks = document.querySelectorAll('.tree-container a');
-
     function insertLineBreaks() {
         const multilineElements = document.querySelectorAll('.main .second-column .code-container .multiline-text');
 
@@ -542,25 +544,52 @@ public func MainActivity_printHelloWorld(
     document.addEventListener('DOMContentLoaded', insertLineBreaks);
     window.addEventListener('resize', insertLineBreaks);
 
-    const contentDivs = document.querySelectorAll('.content-div');
+    const mainElement = document.querySelector('main');
+    const menuItems = document.querySelectorAll(".menu-items");
+    const treeItems = document.querySelectorAll(".tree-items");
 
-    // Create an Intersection Observer
-    const observered = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // Update the URL with the ID of the currently focused div
-                history.replaceState(null, null, `#${entry.target.id}`);
-                console.log(`#${entry.target.id}`);
-                treeLinks.forEach(function (link) {
-                    link.classList.toggle('current', link.getAttribute('href') === '#' + entry.target.id);
+    treeItems.forEach(item => {
+        item.addEventListener('click', onClickHamburgerMenu);
+    });
+
+    function checkDivPositions() {
+        const y = 219;
+        const x = window.innerWidth - window.innerWidth * 7 / 100;
+
+        const element = document.elementFromPoint(x, y);
+
+        if (element && element.classList.contains('sec')) {
+            const hashtag = checkHashchange();
+            if ( hashtag !== element.id) {
+                history.replaceState(null, null, `#${element.id}`);
+                menuItems.forEach(function(elem, index) {
+                    elem.classList.remove("current");
+                    const filteredItems = [...menuItems].filter(elem => elem.getAttribute("href") === "#" + element.id);
+                    filteredItems[0].classList.add("current");
                 });
             }
-        });
-    }, { threshold: 0.5 });
+        }
+    }
 
-    // Observe each content div
-    contentDivs.forEach(div => {
-        observered.observe(div);
+    // action for scroll with width of the screen less than 992px
+    mainElement.addEventListener("scroll", checkDivPositions);
+
+    // action for scroll with width of the screen more than 992px
+    document.addEventListener("scroll", checkDivPositions);
+    checkDivPositions();
+
+
+    function checkHashchange() {
+        return window.location.hash.slice(1);
+    }
+
+    window.addEventListener('hashchange', function() {
+        const newFragmentIdentifier = window.location.hash.slice(1);
+        menuItems.forEach(function(elem) {
+            elem.classList.remove("current");
+            const filteredItems = [...menuItems].filter(elem => elem.getAttribute("href") === `#${newFragmentIdentifier}`);
+            filteredItems[0].classList.add("current");
+        });
     });
 </script>
 </body>

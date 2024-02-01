@@ -106,21 +106,20 @@ header .logo-red {
 }
 
 main {
-    padding: 20px 5%;
+    padding-top: 20px;
     margin: 0 auto;
     max-width: 1400px;
     display: flex;
 }
 
-main .first-column {
-    width: 10%;
-}
-
 main .second-column {
-    width: 70%;
-    padding-right: 5%;
+    width: 78%;
     margin-left: 22%;
     font-family: 'Mona Sans', sans-serif;
+}
+
+main .second-column > div {
+    padding-right: 10%;
 }
 
 main .third-column {
@@ -130,6 +129,7 @@ main .third-column {
     position: fixed;
     font-family: 'Mona Sans', sans-serif;
     font-weight: 400;
+    padding-left: 5%;
 }
 
 main .third-column .tree-container {
@@ -194,7 +194,8 @@ main .second-column h2 {
     font-weight: 600;
     font-size: 36px;
     line-height: 44px;
-    margin-top: 36px;
+    padding-top: 36px;
+    margin: 0;
     font-family: 'Inter', sans-serif;
 }
 
@@ -204,7 +205,8 @@ main .second-column h3 {
     font-weight: 500;
     line-height: 29px;
     color: rgba(51, 51, 51, 1);
-    margin-top: 48px;
+    padding-top: 48px;
+    margin: 0;
 }
 
 main .second-column h4 {
@@ -218,10 +220,13 @@ main .second-column h4 {
 .bottom-border {
     border-bottom: 1px solid rgba(242, 242, 242, 1);
     width: 100%;
-    margin-bottom: 48px;
-    padding-bottom: 28px;
+    padding-bottom: 48px;
+    margin-top: 28px;
 }
 
+.null-margin {
+    margin: 0;
+}
 main .second-column img {
     width: 100%;
 }
@@ -254,6 +259,7 @@ main .second-column ol {
     color: rgba(51, 51, 51, 1);
     line-height: 30px;
     font-size: 16px;
+    margin: 0;
 }
 
 main .second-column ol li {
@@ -304,7 +310,7 @@ main .second-column .code-container {
     position: relative;
 }
 
-.fiolet {
+.violet {
     color: rgba(102, 57, 186, 1);
 }
 
@@ -443,13 +449,14 @@ footer .social-media-container svg {
         height: calc(100vh - 100px);
     }
 
-    main .first-column {
-        display: none;
-    }
-
     main .second-column {
         width: 100%;
         margin: 0;
+    }
+
+    main .second-column > div {
+        padding-right: 10%;
+        padding-left: 5%;
     }
 
     main .third-column {
@@ -502,7 +509,6 @@ footer .social-media-container svg {
 
     .footer {
         padding-bottom: 100px;
-        width: 100%;
         margin-top: 0;
     }
 
@@ -525,5 +531,9 @@ footer .social-media-container svg {
     main .second-column .code-container .code-frame-icon {
         top: 8px;
         right: 8px;
+    }
+
+    .footer {
+        padding-bottom: 100px;
     }
 }
