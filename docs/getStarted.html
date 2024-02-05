@@ -458,6 +458,12 @@ public func MainActivity_printHelloWorld(
     </div>
 </footer>
 <script>
+    let screenWidth = window.innerWidth;
+    window.addEventListener("resize", () => {
+        screenWidth = window.innerWidth;
+    })
+
+
     <!-- Hamburger animation   -->
     const btn = document.getElementById("btn");
     const hamburger = document.getElementById("hamburger");
@@ -466,11 +472,13 @@ public func MainActivity_printHelloWorld(
     function onClickHamburgerMenu(){
         const isActive = hamburger.classList.contains("is-active");
 
-        hamburger.classList.toggle("is-active", !isActive);
-        thirdColumn.classList.toggle("show", !isActive);
-        thirdColumn.classList.toggle("hide", isActive);
+        if (screenWidth < 992) {
+            hamburger.classList.toggle("is-active", !isActive);
+            thirdColumn.classList.toggle("show", !isActive);
+            thirdColumn.classList.toggle("hide", isActive);
 
-        checkThirdColumn();
+            checkThirdColumn();
+        }
     }
 
     btn.onclick = onClickHamburgerMenu;
@@ -481,16 +489,11 @@ public func MainActivity_printHelloWorld(
             : thirdColumn.style.display = 'block';
     }
     function toggleThirdColumnVisibility() {
-        const screenWidth = getScreenWidth();
-
         // Check if the screen width is more than 992px
         (screenWidth >= 992)
             ? (btn.style.display = 'none', thirdColumn.style.display = 'block')
             : (btn.style.display = 'block', thirdColumn.style.display = 'none',
                 hamburger.classList.remove("is-active"));
-    }
-    function getScreenWidth() {
-        return window.innerWidth;
     }
 
     window.addEventListener('resize', toggleThirdColumnVisibility);
