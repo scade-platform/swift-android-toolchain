@@ -9,7 +9,8 @@ body {
     padding: 0;
     overflow: hidden;
     min-height: 100vh;
-    background-image: url("../img/background-desktop.png");
+    background-image: url("../img/background-desktop.jpg");
+    /*background-image: url("../img/background-desktop.png");*/
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;

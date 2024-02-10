@@ -21,7 +21,7 @@
         </div>
     </div>
 </header>
-<main>
+<main class="main">
     <div class="third-column">
         <div class="tree-container">
             <a href="#prerequisites" class="tree-items" >Getting started</a>
@@ -555,9 +555,23 @@ public func MainActivity_printHelloWorld(
         item.addEventListener('click', onClickHamburgerMenu);
     });
 
+    const main = document.querySelector('.main');
+
+    let mainInitialWidth = getWidth();
+    function getWidth() {
+        return main.getBoundingClientRect().width;
+    }
+
+    window.addEventListener('resize', () => {
+        mainInitialWidth = getWidth();
+    });
     function checkDivPositions() {
+        let rightMarginSpace = 0;
+        if (window.innerWidth > 1400) {
+            rightMarginSpace = (window.innerWidth - mainInitialWidth) / 2;
+        }
         const y = 219;
-        const x = window.innerWidth - window.innerWidth * 7 / 100;
+        const x = window.innerWidth - mainInitialWidth * 7 / 100 - rightMarginSpace;
 
         const element = document.elementFromPoint(x, y);
 
