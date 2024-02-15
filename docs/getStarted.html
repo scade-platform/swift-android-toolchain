@@ -82,7 +82,7 @@
                         </div>
                         <pre id="codeContent1" class="multiline-text">
 scd list-installed
-                        </pre>
+</pre>
                     </div>
                 </li>
             </ol>
@@ -123,9 +123,8 @@ scd list-installed
                 </div>
                 <pre id="codeContent2" class="multiline-text">
 cd SwiftAndroidExample/app/src/main/swift
-
 swift package init --name SwiftAndroidExample
-            </pre>
+</pre>
             </div>
 
             <pre>
@@ -153,7 +152,7 @@ It will set up a new SPM project named SwiftAndroidExample inside the swift subd
         }
     }
 }
-            </pre>
+</pre>
             </div>
 
             <pre>
@@ -170,7 +169,7 @@ This informs Gradle to locate JNI libraries in the lib subdirectory.
                 </div>
                 <pre id="codeContent4" class="multiline-text">
 In the dependencies section, include:
-            </pre>
+</pre>
             </div>
 
             <p>
@@ -187,28 +186,19 @@ In the dependencies section, include:
                 </div>
                 <pre id="codeContent5" class="multiline-text">
 task buildSwiftProject(type: Exec) {
-
     commandLine 'scd',
-
             'archive', '--type', 'android',
-
             '--path', 'src/main/swift',
-
             '--platform', 'android-arm64-v8a',
-
             '--platform', 'android-x86_64'
 }
 
 tasks.whenTaskAdded { task ->
-
     if (task.name == 'assembleDebug' || task.name == 'assembleRelease') {
-
         task.dependsOn buildSwiftProject
-
     }
-
 }
-            </pre>
+</pre>
             </div>
 
             <h3>Initialize Swift Runtime and Load JNI Library</h3>
@@ -222,25 +212,17 @@ tasks.whenTaskAdded { task ->
                 </div>
                 <pre id="codeContent6" class="multiline-text">
 @Override
-
 protected void onCreate(Bundle savedInstanceState) {
-
     super.onCreate(savedInstanceState);
-
     setContentView(R.layout.activity_main);
 
     try {
-
         org.swift.swiftfoundation.SwiftFoundation.Initialize(this, false);
-
     } catch (Exception err) {
-
         android.util.Log.e("Swift", "Can't initialize Swift Foundation: " + err.toString());
-
     }
 
     // Continue with your activity code
-
 }
             </pre>
             </div>
@@ -255,7 +237,7 @@ protected void onCreate(Bundle savedInstanceState) {
                 </div>
                 <pre id="codeContent7" class="multiline-text">
 System.loadLibrary("SwiftAndroidExample");
-            </pre>
+</pre>
             </div>
 
             <h3>Java Methods Calling Swift Implementation</h3>
@@ -267,17 +249,13 @@ System.loadLibrary("SwiftAndroidExample");
                 </div>
                 <pre id="codeContent8" class="multiline-text">
 public class MainActivity extends AppCompatActivity {
-
     // Declare a native method in Java, with the implementation in Swift
-
     public native void printHelloWorld();
 
     // This method is called from Swift code, and the result is sent as an input parameter
-
     public void printText(String validationResult) {
 
         // Assuming headerTV is a TextView in your layout
-
         headerTV.setText(validationResult);
     }
 
@@ -297,41 +275,27 @@ public class MainActivity extends AppCompatActivity {
                 </div>
                 <pre id="codeContent9" class="multiline-text">
 import Dispatch
-
 import Foundation
-
 import Java
 
 // Function to update tasks list in Java
-
 public func updateTasksList(activity: JObject) {
-
   // Call the Java method "printText" with the message "Hello World!"
-
   activity.call(method: "printText", "Hello World!")
-
 }
 
 // Use @_silgen_name attribute to set native name for a function called from Java
-
 @_silgen_name("Java_com_example_swiftandroidexample_MainActivity_printHelloWorld")
-
 public func MainActivity_printHelloWorld(
-
   env: UnsafeMutablePointer&lt;JNIEnv>, activity: JavaObject
-
 ) {
-
   // Create JObject wrapper for the activity object
-
   let mainActivity = JObject(activity)
 
   // Call the Swift function to update tasks list in Java
-
   updateTasksList(activity: mainActivity)
-
 }
-            </pre>
+</pre>
             </div>
 
             <p>This Swift code demonstrates the integration of Swift functions with Java methods, allowing for bidirectional communication between Swift and Java in your Android application.</p>
