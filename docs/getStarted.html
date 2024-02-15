@@ -55,40 +55,37 @@
             <p>
                 Before setting up Swift for Android, ensure that you have Android Studio installed on your macOS. Follow these steps:
             </p>
-            <ol class="dots">
-                <li><span class="inter-medium">Install Android Studio:</span></li>
-            </ol>
+
+            <p><span class="inter-medium">Install Android Studio:</span></p>
             <ol class="dots intent-space">
                 <li class="inter-regular">Download Android Studio.</li>
                 <li class="inter-regular">Run the downloaded installer and follow the setup instructions.</li>
-                <li class="inter-regular">Launch Android Studio eand complete the initial configuration, including the installation of the Android SDK.</li>
+                <li class="inter-regular">Launch Android Studio and complete the initial configuration, including the installation of the Android SDK.</li>
                 <li class="inter-regular">Install Android NDK, by clicking on Tools -> SDK Manager -> SDK Tools tab. Select the NDK(side by side) and CMake checkboxes. Click OK to download and install.</li>
                 <li class="inter-regular"><a href="https://developer.android.com/studio/run/emulator">Install Android Emulator</a> if you want to run on Android emulators</li>
             </ol>
 
-            <ol class="dots">
-                <li><span class="inter-medium">Install Swift Toolchain for Android:</span></li>
-            </ol>
+            <p><span class="inter-medium">Install Swift Toolchain for Android:</span></p>
             <ol class="dots intent-space">
-                <li class="inter-regular">Download Swift Toolchain for Android</li>
+                <li class="inter-regular"><a href="https://github.com/scade-platform/swift-android-toolchain/releases/download/5.9.2/swift-android-5.9.2.pkg">Download</a> Swift Toolchain for Android</li>
                 <li class="inter-regular">Run the downloaded installer and follow the setup instructions.</li>
             </ol>
 
-            <ol class="dots">
-                <li><span class="inter-medium">Verify Swift Toolchain (Already Included in SCADE IDE):</span></li>
-            </ol>
-            <p class="intent-space">
-                In the terminal, check with the below commands if Swift Toolchain for Android is installed or not. The following command should print the installed Swift Toolchain version:
-            </p>
+            <p><span class="inter-medium">Verify Swift Toolchain (Already Included in SCADE IDE):</span></p>
+            <ol class="dots intent-space">
+                <li class="inter-regular">
+                    In the terminal, check with the below commands if Swift Toolchain for Android is installed or not. The following command should print the installed Swift Toolchain version:                    
 
-            <div class="code-container intent-space">
-                <div class="code-frame-icon copy-code" data-target="codeContent1">
-                    <img src="img/code-frame-icon.svg" alt="">
-                </div>
-                <pre id="codeContent1" class="multiline-text">
-    scd list-installed
-                </pre>
-            </div>
+                    <div class="code-container">
+                        <div class="code-frame-icon copy-code" data-target="codeContent1">
+                            <img src="img/code-frame-icon.svg" alt="">
+                        </div>
+                        <pre id="codeContent1" class="multiline-text">
+scd list-installed
+                        </pre>
+                    </div>
+                </li>
+            </ol>
 
             <h4>For Linux</h4>
             <pre>Currently Swift for Android is available for macOS only. It will be available for Linux very soon.</pre>
@@ -99,7 +96,7 @@
             <h3>How to Create a Hello World Application</h3>
             <ol class="dots">
                 <li class="inter-regular">Open Android Studio.</li>
-                <li class="inter-regular">Begin a new project by selecting "File" > "New" > "New Project."</li>
+                <li class="inter-regular">Create a new project by selecting "File" > "New" > "New Project."</li>
             </ol>
 
             <div class="image-container">
@@ -107,8 +104,9 @@
             </div>
 
             <ol class="dots">
-                <li class="inter-regular">Choose a suitable template; for this guide, select "Empty Views Activity."</li>
-                <li class="inter-regular">Note: Ensure you choose "Empty Views Activity," not "Empty Activity."</li>
+                <li class="inter-regular">Choose a suitable template; for this guide, select "Empty Views Activity."
+                    <pre>Note: Ensure you choose "Empty Views Activity," not "Empty Activity."</pre>
+                </li>
                 <li class="inter-regular">Provide project details such as name (e.g., SwiftAndroidExample) and package name  (e.g., com.example.myapplication).</li>
                 <li class="inter-regular">Click "Next" to proceed.</li>
             </ol>
