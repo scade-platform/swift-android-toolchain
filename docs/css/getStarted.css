@@ -262,6 +262,10 @@ main .second-column ol {
     margin: 0;
 }
 
+main ol.no-padding-list {
+    padding-left: 1em;
+}
+
 main .second-column ol li {
     margin-top: 10px;
 }

@@ -93,29 +93,26 @@ scd list-installed
         </div>
 
         <div id="helloWorld" class="sec">
-            <h3>How to Create a Hello World Application</h3>
-            <ol class="dots">
+            <h3>Creating new Android project</h3>
+            <ol class="dots no-padding-list">
                 <li class="inter-regular">Open Android Studio.</li>
-                <li class="inter-regular">Select File -> New -> New Project in the main menu.</li>
-            </ol>
-
-            <div class="image-container">
-                <img src="img/helloWorldImage.jpg" alt="">
-            </div>
-
-            <ol class="dots">
-                <li class="inter-regular">Choose a suitable template; for this guide, select "Empty Views Activity."
-                    <pre>Note: Ensure you choose "Empty Views Activity," not "Empty Activity."</pre>
+                <li class="inter-regular">
+                    Select File -> New -> New Project in the main menu.
+                    <div class="image-container">
+                        <img src="img/helloWorldImage.jpg" alt="">
+                    </div>
                 </li>
-                <li class="inter-regular">Provide project details such as name (e.g., <code>SwiftAndroidExample</code>) and package name (e.g., <code>com.example.myapplication</code>).</li>
+                <li class="inter-regular">
+                    Choose a suitable template; for this guide, select "Empty Views Activity."<br>
+                    <b>NOTE:</b> Ensure you choose "Empty Views Activity," not "Empty Activity."
+                </li>
+                <li class="inter-regular">Provide project details such as name (e.g., <code>SwiftAndroidExample</code>) and package name (e.g., <code>com.example.swiftandroidexample</code>).</li>
                 <li class="inter-regular">Click "Next" to proceed.</li>
             </ol>
 
             <h3>Initializing Swift Package Manager (SPM) Project</h3>
 
-            <ol class="dots">
-                <li class="inter-regular">To create a new Swift Package Manager (SPM) project within the <code>app/src/main/swift</code> subdirectory, run the following commands in the terminal:</li>
-            </ol>
+            <p>To create a new Swift Package Manager (SPM) project within the <code>app/src/main/swift</code> subdirectory, run the following commands in the terminal:</p>
 
             <div class="code-container">
                 <div class="code-frame-icon copy-code" data-target="codeContent2">
@@ -136,16 +133,16 @@ This project structure allows you to efficiently manage Swift dependencies and b
 
             <h3>Configure Gradle in build.gradle</h3>
 
-            <ol class="dots">
+            <ol class="dots no-padding-list">
                 <li class="inter-regular">In your Android project, access the <code>app/build.gradle</code> file.</li>
-                <li class="inter-regular">Enhance the android section by adding:</li>
-            </ol>
+                <li class="inter-regular">
+                    Enhance the android section by adding:
 
-            <div class="code-container">
-                <div class="code-frame-icon copy-code" data-target="codeContent3">
-                    <img src="img/code-frame-icon.svg" alt="">
-                </div>
-                <pre id="codeContent3" class="multiline-text">
+                    <div class="code-container">
+                        <div class="code-frame-icon copy-code" data-target="codeContent3">
+                            <img src="img/code-frame-icon.svg" alt="">
+                        </div>
+                        <pre id="codeContent3" class="multiline-text">
 <span class="violet">android</span> {
     sourceSets {
         main {
@@ -154,38 +151,33 @@ This project structure allows you to efficiently manage Swift dependencies and b
     }
 }
 </pre>
-            </div>
+                    </div>
+                    This informs Gradle to locate JNI libraries in the <code>lib</code> subdirectory.
 
-            <pre>
-This informs Gradle to locate JNI libraries in the <code>lib</code> subdirectory.
-        </pre>
+                </li>
+                <li class="inter-regular">
+                    In the <code>dependencies</code> section, include:
 
-            <ol class="dots">
-                <li class="inter-regular">In the <code>dependencies</code> section, include:</li>
-            </ol>
-
-            <div class="code-container">
-                <div class="code-frame-icon copy-code" data-target="codeContent4">
-                    <img src="img/code-frame-icon.svg" alt="">
-                </div>
-                <pre id="codeContent4" class="multiline-text">
+                    <div class="code-container">
+                        <div class="code-frame-icon copy-code" data-target="codeContent4">
+                            <img src="img/code-frame-icon.svg" alt="">
+                        </div>
+                        <pre id="codeContent4" class="multiline-text">
 In the dependencies section, include:
 </pre>
-            </div>
+                    </div>
 
-            <p>
-                This line instructs Gradle to include .jar libraries in the resulting APK.
-            </p>
-
-            <ol class="dots">
-                <li class="inter-regular">At the end of <code>build.gradle</code>, insert the following custom Gradle task:</li>
-            </ol>
-
-            <div class="code-container">
-                <div class="code-frame-icon copy-code" data-target="codeContent5">
-                    <img src="img/code-frame-icon.svg" alt="">
-                </div>
-                <pre id="codeContent5" class="multiline-text">
+                    <p>
+                        This line instructs Gradle to include .jar libraries in the resulting APK.
+                    </p>
+                </li>
+                <li class="inter-regular">
+                    At the end of <code>build.gradle</code>, insert the following custom Gradle task:
+                    <div class="code-container">
+                        <div class="code-frame-icon copy-code" data-target="codeContent5">
+                            <img src="img/code-frame-icon.svg" alt="">
+                        </div>
+                        <pre id="codeContent5" class="multiline-text">
 task buildSwiftProject(type: Exec) {
     commandLine 'scd',
             'archive', '--type', 'android',
@@ -200,18 +192,20 @@ tasks.whenTaskAdded { task ->
     }
 }
 </pre>
-            </div>
-
-            <h3>Initialize Swift Runtime and Load JNI Library</h3>
-            <ol class="dots">
-                <li class="inter-regular">In <code>MainActivity.java</code>, add Swift runtime initialization in the <code>onCreate</code> method:</li>
+                    </div>
+                </li>
             </ol>
 
-            <div class="code-container">
-                <div class="code-frame-icon copy-code" data-target="codeContent6">
-                    <img src="img/code-frame-icon.svg" alt="">
-                </div>
-                <pre id="codeContent6" class="multiline-text">
+            <h3>Initialize Swift Runtime and Load JNI Library</h3>
+            <ol class="dots no-padding-list">
+                <li class="inter-regular">
+                    In <code>MainActivity.java</code>, add Swift runtime initialization in the <code>onCreate</code> method:
+
+                    <div class="code-container">
+                        <div class="code-frame-icon copy-code" data-target="codeContent6">
+                            <img src="img/code-frame-icon.svg" alt="">
+                        </div>
+                        <pre id="codeContent6" class="multiline-text">
 @Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
@@ -225,21 +219,22 @@ protected void onCreate(Bundle savedInstanceState) {
 
     // Continue with your activity code
 }
-            </pre>
-            </div>
+</pre>
+                    </div>
+                </li>
+                <li class="inter-regular">
+                    Load the JNI library using:
 
-            <ol class="dots">
-                <li class="inter-regular">Load the JNI library using:</li>
-            </ol>
-
-            <div class="code-container">
-                <div class="code-frame-icon copy-code" data-target="codeContent7">
-                    <img src="img/code-frame-icon.svg" alt="">
-                </div>
-                <pre id="codeContent7" class="multiline-text">
+                    <div class="code-container">
+                        <div class="code-frame-icon copy-code" data-target="codeContent7">
+                            <img src="img/code-frame-icon.svg" alt="">
+                        </div>
+                        <pre id="codeContent7" class="multiline-text">
 System.loadLibrary("SwiftAndroidExample");
 </pre>
-            </div>
+                    </div>
+                </li>
+            </ol>
 
             <h3>Java Methods Calling Swift Implementation</h3>
             <p>In your Android application, you can declare Java methods that serve as bridges to Swift code. The implementation of these methods will be written in Swift, allowing seamless integration between the two languages. Here's an example:</p>
