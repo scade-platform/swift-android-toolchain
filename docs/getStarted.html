@@ -107,14 +107,14 @@ scd list-installed
                 <li class="inter-regular">Choose a suitable template; for this guide, select "Empty Views Activity."
                     <pre>Note: Ensure you choose "Empty Views Activity," not "Empty Activity."</pre>
                 </li>
-                <li class="inter-regular">Provide project details such as name (e.g., SwiftAndroidExample) and package name  (e.g., com.example.myapplication).</li>
+                <li class="inter-regular">Provide project details such as name (e.g., <code>SwiftAndroidExample</code>) and package name (e.g., <code>com.example.myapplication</code>).</li>
                 <li class="inter-regular">Click "Next" to proceed.</li>
             </ol>
 
             <h3>Initializing Swift Package Manager (SPM) Project</h3>
 
             <ol class="dots">
-                <li class="inter-regular">To create a new Swift Package Manager (SPM) project within the app/src/main/swift subdirectory, run the following commands in the terminal:</li>
+                <li class="inter-regular">To create a new Swift Package Manager (SPM) project within the <code>app/src/main/swift</code> subdirectory, run the following commands in the terminal:</li>
             </ol>
 
             <div class="code-container">
@@ -128,7 +128,8 @@ swift package init --name SwiftAndroidExample
             </div>
 
             <pre>
-It will set up a new SPM project named SwiftAndroidExample inside the swift subdirectory. This project structure allows you to efficiently manage Swift dependencies and build your Swift code as a separate module within your Android Studio project.
+It will set up a new SPM project named <code>SwiftAndroidExample</code> inside the <code>swift</code> subdirectory.
+This project structure allows you to efficiently manage Swift dependencies and build your Swift code as a separate module within your Android Studio project.
         </pre>
 
             <img src="img/code_example.jpg" alt="">
@@ -136,7 +137,7 @@ It will set up a new SPM project named SwiftAndroidExample inside the swift subd
             <h3>Configure Gradle in build.gradle</h3>
 
             <ol class="dots">
-                <li class="inter-regular">In your Android project, access the app/build.gradle file.</li>
+                <li class="inter-regular">In your Android project, access the <code>app/build.gradle</code> file.</li>
                 <li class="inter-regular">Enhance the android section by adding:</li>
             </ol>
 
@@ -156,11 +157,11 @@ It will set up a new SPM project named SwiftAndroidExample inside the swift subd
             </div>
 
             <pre>
-This informs Gradle to locate JNI libraries in the lib subdirectory.
+This informs Gradle to locate JNI libraries in the <code>lib</code> subdirectory.
         </pre>
 
             <ol class="dots">
-                <li class="inter-regular">In the dependencies section, include:</li>
+                <li class="inter-regular">In the <code>dependencies</code> section, include:</li>
             </ol>
 
             <div class="code-container">
@@ -177,7 +178,7 @@ In the dependencies section, include:
             </p>
 
             <ol class="dots">
-                <li class="inter-regular">At the end of build.gradle, insert the following custom Gradle task:</li>
+                <li class="inter-regular">At the end of <code>build.gradle</code>, insert the following custom Gradle task:</li>
             </ol>
 
             <div class="code-container">
@@ -203,7 +204,7 @@ tasks.whenTaskAdded { task ->
 
             <h3>Initialize Swift Runtime and Load JNI Library</h3>
             <ol class="dots">
-                <li class="inter-regular">In MainActivity.java, add Swift runtime initialization in the onCreate method:</li>
+                <li class="inter-regular">In <code>MainActivity.java</code>, add Swift runtime initialization in the <code>onCreate</code> method:</li>
             </ol>
 
             <div class="code-container">
@@ -264,10 +265,13 @@ public class MainActivity extends AppCompatActivity {
 </pre>
             </div>
 
-            <p>The Swift implementation of printHelloWorld and the Swift code calling printText will complete the interaction between Java and Swift, providing a seamless integration of functionalities in your Android application.</p>
+            <p>The Swift implementation of <code>printHelloWorld</code> and the Swift code calling <code>printText</code> will complete the interaction between Java and Swift, providing a seamless integration of functionalities in your Android application.</p>
 
             <h3>Swift Implementation for Java Methods</h3>
-            <p>The MainActivity_printHelloWorld function is annotated with @_silgen_name to set the native name for the function when called from Java. It takes the JNI environment (env) and the Java activity (activity) as parameters. Inside this function, you create a JObject wrapper for the Java activity and call the updateTasksList function to perform the desired interaction with the Java code.</p>
+            <p>
+                The <code>MainActivity_printHelloWorld</code> function is annotated with <code>@_silgen_name</code> to set the native name for the function when called from Java. It takes the JNI environment (<code>env</code>) and the Java activity (<code>activity</code>) as parameters.
+                Inside this function, you create a <code>JObject</code> wrapper for the Java activity and call the <code>updateTasksList</code> function to perform the desired interaction with the Java code.
+            </p>
 
             <div class="code-container">
                 <div class="code-frame-icon copy-code" data-target="codeContent9">

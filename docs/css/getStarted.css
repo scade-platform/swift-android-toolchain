@@ -328,6 +328,14 @@ main .second-column .code-container pre {
     word-break: break-word;
 }
 
+main code {
+    font-family: "Inconsolata", sans-serif;
+    font-size: 18px;
+    background-color: rgb(245, 245, 245);
+    padding: .2em .4em;
+    border-radius: 6px;
+}
+
 
 main .second-column .code-container .code-frame-icon {
     position: absolute;
