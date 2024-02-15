@@ -280,20 +280,20 @@ import Java
 
 // Function to update tasks list in Java
 public func updateTasksList(activity: JObject) {
-  // Call the Java method "printText" with the message "Hello World!"
-  activity.call(method: "printText", "Hello World!")
+    // Call the Java method "printText" with the message "Hello World!"
+    activity.call(method: "printText", "Hello World!")
 }
 
 // Use @_silgen_name attribute to set native name for a function called from Java
 @_silgen_name("Java_com_example_swiftandroidexample_MainActivity_printHelloWorld")
 public func MainActivity_printHelloWorld(
-  env: UnsafeMutablePointer&lt;JNIEnv>, activity: JavaObject
+    env: UnsafeMutablePointer&lt;JNIEnv>, activity: JavaObject
 ) {
-  // Create JObject wrapper for the activity object
-  let mainActivity = JObject(activity)
+    // Create JObject wrapper for the activity object
+    let mainActivity = JObject(activity)
 
-  // Call the Swift function to update tasks list in Java
-  updateTasksList(activity: mainActivity)
+    // Call the Swift function to update tasks list in Java
+    updateTasksList(activity: mainActivity)
 }
 </pre>
             </div>
