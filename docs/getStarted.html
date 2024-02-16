@@ -272,7 +272,7 @@ protected void onCreate(Bundle savedInstanceState) {
                         </div>
                         <pre id="codeContent8" class="multiline-text"><code class="language-java">public class MainActivity extends AppCompatActivity {
     // Declare a native method in Java, with the implementation in Swift
-    private native void swiftHelloWorld();
+    private native String swiftHelloWorld();
 
     // ... Rest of your MainActivity code
 }
@@ -282,8 +282,8 @@ protected void onCreate(Bundle savedInstanceState) {
 
                 <li>
                     <p>
-                        At the end of the <code>onCreate</code> method of the <code>MainActivity</code> class, call
-                        the <code>swiftHelloWorld</code> method:
+                        At the end of the <code>onCreate</code> method of the <code>MainActivity</code> class,
+                        add the following code:
                     </p>
 
                     <div class="code-container">
@@ -292,11 +292,15 @@ protected void onCreate(Bundle savedInstanceState) {
                         </div>
                         <pre id="codeContent8" class="multiline-text"><code class="language-java">@Override
 protected void onCreate(Bundle savedInstanceState) {
-    // ... Activity and Swift initialization code added before
+    // ... Swift initialization code added before
 
-    // Call the swiftHelloWorld method and log returned value
+    // Call the swiftHelloWorld method implemented in Swift
     String msg = swiftHelloWorld();
-    android.util.Log.i("SwiftAndroidExample", msg);
+
+    // Display the value returned from swift in the text view
+    android.widget.TextView text = new android.widget.TextView(this);
+    text.setText(msg);
+    setContentView(text);
 }
 </code></pre>
                     </div>
@@ -305,46 +309,46 @@ protected void onCreate(Bundle savedInstanceState) {
                 </li>
             </ol>
 
-            <h3>Swift Implementation for Java Methods</h3>
+            <h3>Implement native Java methods in Swift</h3>
             <p>
-                The <code>MainActivity_printHelloWorld</code> function is annotated with <code>@_silgen_name</code> to set the native name for the function when called from Java. It takes the JNI environment (<code>env</code>) and the Java activity (<code>activity</code>) as parameters.
-                Inside this function, you create a <code>JObject</code> wrapper for the Java activity and call the <code>updateTasksList</code> function to perform the desired interaction with the Java code.
-            </p>
+                Add the following code in the <code>SwiftAndroidExample.swift</code> source
+                located in the <code>app/src/main/swift/Sources/SwiftAndroidExample</code>
+                subdirectory of the Android project root:
+           </p>
 
             <div class="code-container">
                 <div class="code-frame-icon copy-code" data-target="codeContent9">
                     <img src="img/code-frame-icon.svg" alt="">
                 </div>
-                <pre id="codeContent9" class="multiline-text"><code class="language-swift">import Dispatch
-import Foundation
-import Java
-
-// Function to update tasks list in Java
-public func updateTasksList(activity: JObject) {
-    // Call the Java method "printText" with the message "Hello World!"
-    activity.call(method: "printText", "Hello World!")
-}
+                <pre id="codeContent9" class="multiline-text"><code class="language-swift">import CJNI
 
 // Use @_silgen_name attribute to set native name for a function called from Java
-@_silgen_name("Java_com_example_swiftandroidexample_MainActivity_printHelloWorld")
-public func MainActivity_printHelloWorld(
-    env: UnsafeMutablePointer&lt;JNIEnv>, activity: JavaObject
-) {
-    // Create JObject wrapper for the activity object
-    let mainActivity = JObject(activity)
-
-    // Call the Swift function to update tasks list in Java
-    updateTasksList(activity: mainActivity)
+@_silgen_name("Java_com_example_swiftandroidexample_MainActivity_swiftHelloWorld")
+public func MainActivity_swiftHelloWorld(
+    env: UnsafeMutablePointer<JNIEnv>, activity: JavaObject
+) -> JavaObject {
+    let jstr = env.pointee.pointee.NewStringUTF(env, "Swift Hello World!")
+    return jstr!
 }
 </code></pre>
             </div>
 
-            <p>This Swift code demonstrates the integration of Swift functions with Java methods, allowing for bidirectional communication between Swift and Java in your Android application.</p>
+            <p>This Swift code implements the <code>swiftHelloWorld</code> Java native method of the
+               <code>MainActivity</code> class. The method is declared with the <code>@_silgen_name</code>
+               attribute to set correct name for the method implementation. It creates a new Java
+               string containing the message <code>"Swift Hello World!"</code> and returns it to the caller.
+            </p>
 
-            <h3>Run the Hello World App</h3>
-            <p>Run the Android Appusing Swift’s code like you would run any Android project in Android Studio, on Android Emulator/Physical device. You should be able to see Hello World.</p>
+            <h3>Run the SwiftAndroidExample application</h3>
+            
+            <p>
+                After completing the steps described in the previous sections, you can run the application
+                on Android and observe the results.
+                It will display a text view containing the text <code>"Swift Hello World!"</code>.
+            </p>
 
-            <img src="img/mobile-code-example.jpg" alt="" class="mobile-code-example">
+
+            <img src="img/mobile-code-example.png" alt="" class="mobile-code-example">
 
             <p class="bottom-border null-margin">Source Code: Please find the source code of Hello World App(Swift for Android) <a href="https://github.com/scade-platform/FusionExamples/tree/main/swift-for-android-hello-world-main">here</a></p>
         </div>
