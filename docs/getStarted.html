@@ -50,7 +50,7 @@
             </ol>
         </div>
         <div id="install" class="sec">
-            <h3 >How to Install Swift for Android</h3>
+            <h3 >Install Swift for Android</h3>
             <h4>For macOS</h4>
             <p>
                 Before setting up Swift for Android, ensure that you have Android Studio installed on your macOS. Follow these steps:
@@ -93,7 +93,7 @@ scd list-installed
         </div>
 
         <div id="helloWorld" class="sec">
-            <h3>Creating new Android project</h3>
+            <h3>Create new Android project</h3>
             <ol class="dots no-padding-list">
                 <li class="inter-regular">Open Android Studio.</li>
                 <li class="inter-regular">
@@ -110,44 +110,75 @@ scd list-installed
                 <li class="inter-regular">Click "Next" to proceed.</li>
             </ol>
 
-            <h3>Initializing Swift Package Manager (SPM) Project</h3>
+            <h3>Create Swift Package Manager (SPM) Project</h3>
 
-            <p>To create a new Swift Package Manager (SPM) project within the <code>app/src/main/swift</code> subdirectory, run the following commands in the terminal:</p>
-
-            <div class="code-container">
-                <div class="code-frame-icon copy-code" data-target="codeContent2">
-                    <img src="img/code-frame-icon.svg" alt="">
-                </div>
-                <pre id="codeContent2" class="multiline-text">
-cd SwiftAndroidExample/app/src/main/swift
+            <ol class="dots no-padding-list">
+                <li>
+                    <p>
+                        Create a new SPM project within the <code>app/src/main/swift</code> subdirectory, run the following
+                        commands in the terminal from the root project directory:
+                    </p>
+                    <div class="code-container">
+                        <div class="code-frame-icon copy-code" data-target="codeContent2">
+                            <img src="img/code-frame-icon.svg" alt="">
+                        </div>
+                        <pre id="codeContent2" class="multiline-text">
+mkdir -p app/src/main/swift
+cd app/src/main/swift
 swift package init --name SwiftAndroidExample
 </pre>
-            </div>
+                    </div>
+                    <p>
+                        It will create a new SPM project named <code>SwiftAndroidExample</code> within the
+                        <code>app/src/main/swift</code> subdirectory.This project follows the standard structure of
+                        an SPM project and will be automatically built by Gradle as part of the Android project's
+                        build process with custom build tasks configured in the build.gradle file.
+                    </p>
+                </li>
 
-            <pre>
-It will set up a new SPM project named <code>SwiftAndroidExample</code> inside the <code>swift</code> subdirectory.
-This project structure allows you to efficiently manage Swift dependencies and build your Swift code as a separate module within your Android Studio project.
-        </pre>
+                <li>
+                    <p>
+                        Change the product type to a dynamic library in the SPM project manifest. To do that,
+                        add the <code>type: .dynamic</code> parameter in the library description in the
+                        <code>Package.swift</code> file located in the SPM project directory:
+                    </p>
+                    <div class="code-container">
+                        <div class="code-frame-icon copy-code" data-target="codeContent2">
+                            <img src="img/code-frame-icon.svg" alt="">
+                        </div>
+                        <pre id="codeContent2" class="multiline-text">
+products: [
+    .library(
+        name: "SwiftAndroidExample",
+        type: .dynamic,                     // add this line
+        targets: ["SwiftAndroidExample"]),
+],
+</pre>
+                    </div>
+                </li>
+            </ol>
+
 
             <img src="img/code_example.jpg" alt="">
 
-            <h3>Configure Gradle in build.gradle</h3>
+            <h3>Configure Swift SPM project in build.gradle</h3>
+
+            <p>
+                To configure SPM project build, make the following changes in the <code>build.gradle</code> file:
+            </p>
 
             <ol class="dots no-padding-list">
-                <li class="inter-regular">In your Android project, access the <code>app/build.gradle</code> file.</li>
                 <li class="inter-regular">
-                    Enhance the android section by adding:
+                    Add the following code in the <code>android</code> section:
 
                     <div class="code-container">
                         <div class="code-frame-icon copy-code" data-target="codeContent3">
                             <img src="img/code-frame-icon.svg" alt="">
                         </div>
                         <pre id="codeContent3" class="multiline-text">
-<span class="violet">android</span> {
-    sourceSets {
-        main {
-            jniLibs.srcDirs = ["lib"]
-        }
+sourceSets {
+    main {
+        jniLibs.srcDirs = ["lib"]
     }
 }
 </pre>
@@ -156,14 +187,14 @@ This project structure allows you to efficiently manage Swift dependencies and b
 
                 </li>
                 <li class="inter-regular">
-                    In the <code>dependencies</code> section, include:
+                    In the <code>dependencies</code> section, add:
 
                     <div class="code-container">
                         <div class="code-frame-icon copy-code" data-target="codeContent4">
                             <img src="img/code-frame-icon.svg" alt="">
                         </div>
                         <pre id="codeContent4" class="multiline-text">
-In the dependencies section, include:
+    implementation fileTree(dir: 'lib', include: ['*.jar'])
 </pre>
                     </div>
 
@@ -196,45 +227,38 @@ tasks.whenTaskAdded { task ->
                 </li>
             </ol>
 
-            <h3>Initialize Swift Runtime and Load JNI Library</h3>
-            <ol class="dots no-padding-list">
-                <li class="inter-regular">
-                    In <code>MainActivity.java</code>, add Swift runtime initialization in the <code>onCreate</code> method:
+            <h3>Initialize Swift Runtime and Load Swift Library</h3>
 
-                    <div class="code-container">
-                        <div class="code-frame-icon copy-code" data-target="codeContent6">
-                            <img src="img/code-frame-icon.svg" alt="">
-                        </div>
-                        <pre id="codeContent6" class="multiline-text">
+            <p>
+                In <code>MainActivity.java</code>, add the following code in the <code>onCreate</code> method
+                which performs required Swift runtime initialization and loads the <code>SwiftAndroidExample</code>
+                JNI library containing Swift code from the SPM project:
+            </p>
+
+            <div class="code-container">
+                <div class="code-frame-icon copy-code" data-target="codeContent6">
+                    <img src="img/code-frame-icon.svg" alt="">
+                </div>
+                <pre id="codeContent6" class="multiline-text">
 @Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
 
+    // Initialize Swift runtime and Swift Foundation library
     try {
         org.swift.swiftfoundation.SwiftFoundation.Initialize(this, false);
     } catch (Exception err) {
         android.util.Log.e("Swift", "Can't initialize Swift Foundation: " + err.toString());
     }
 
-    // Continue with your activity code
+    // Load JNI library containing Swift code
+    System.loadLibrary("SwiftAndroidExample");
+
+    // other activity initialization code
 }
 </pre>
-                    </div>
-                </li>
-                <li class="inter-regular">
-                    Load the JNI library using:
-
-                    <div class="code-container">
-                        <div class="code-frame-icon copy-code" data-target="codeContent7">
-                            <img src="img/code-frame-icon.svg" alt="">
-                        </div>
-                        <pre id="codeContent7" class="multiline-text">
-System.loadLibrary("SwiftAndroidExample");
-</pre>
-                    </div>
-                </li>
-            </ol>
+            </div>
 
             <h3>Java Methods Calling Swift Implementation</h3>
             <p>In your Android application, you can declare Java methods that serve as bridges to Swift code. The implementation of these methods will be written in Swift, allowing seamless integration between the two languages. Here's an example:</p>
