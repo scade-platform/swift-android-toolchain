@@ -7,6 +7,14 @@
     <title>Swift for Android</title>
     <link rel="icon" href="img/icon_logo.png" type="image/x-icon">
     <link href="css/fonts.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="highlight/styles/atom-one-light.css">
+    <script src="highlight/highlight.min.js"></script>
+    <script src="highlight/languages/swift.min.js"></script>
+    <script src="highlight/languages/java.min.js"></script>
+    <script src="highlight/languages/gradle.min.js"></script>
+    <script src="highlight/languages/bash.min.js"></script>
+    <script>hljs.highlightAll();</script>
 </head>
 <body>
 <header>
@@ -80,15 +88,14 @@
                         <div class="code-frame-icon copy-code" data-target="codeContent1">
                             <img src="img/code-frame-icon.svg" alt="">
                         </div>
-                        <pre id="codeContent1" class="multiline-text">
-scd list-installed
-</pre>
+                        <pre id="codeContent1" class="multiline-text"><code>scd list-installed
+</code></pre>
                     </div>
                 </li>
             </ol>
 
             <h4>For Linux</h4>
-            <pre>Currently Swift for Android is available for macOS only. It will be available for Linux very soon.</pre>
+            <p>Currently Swift for Android is available for macOS only. It will be available for Linux very soon.</p>
 
         </div>
 
@@ -122,11 +129,10 @@ scd list-installed
                         <div class="code-frame-icon copy-code" data-target="codeContent2">
                             <img src="img/code-frame-icon.svg" alt="">
                         </div>
-                        <pre id="codeContent2" class="multiline-text">
-mkdir -p app/src/main/swift
+                        <pre id="codeContent2" class="multiline-text"><code class="language-bash">mkdir -p app/src/main/swift
 cd app/src/main/swift
 swift package init --name SwiftAndroidExample
-</pre>
+</code></pre>
                     </div>
                     <p>
                         It will create a new SPM project named <code>SwiftAndroidExample</code> within the
@@ -146,14 +152,13 @@ swift package init --name SwiftAndroidExample
                         <div class="code-frame-icon copy-code" data-target="codeContent2">
                             <img src="img/code-frame-icon.svg" alt="">
                         </div>
-                        <pre id="codeContent2" class="multiline-text">
-products: [
+                        <pre id="codeContent2" class="multiline-text"><code class="language-swift">products: [
     .library(
         name: "SwiftAndroidExample",
         type: .dynamic,                     // add this line
         targets: ["SwiftAndroidExample"]),
 ],
-</pre>
+</code></pre>
                     </div>
                 </li>
             </ol>
@@ -175,13 +180,12 @@ products: [
                         <div class="code-frame-icon copy-code" data-target="codeContent3">
                             <img src="img/code-frame-icon.svg" alt="">
                         </div>
-                        <pre id="codeContent3" class="multiline-text">
-sourceSets {
+                        <pre id="codeContent3" class="multiline-text"><code class="language-gradle">sourceSets {
     main {
         jniLibs.srcDirs = ["lib"]
     }
 }
-</pre>
+</code></pre>
                     </div>
                     This informs Gradle to locate JNI libraries in the <code>lib</code> subdirectory.
 
@@ -193,9 +197,8 @@ sourceSets {
                         <div class="code-frame-icon copy-code" data-target="codeContent4">
                             <img src="img/code-frame-icon.svg" alt="">
                         </div>
-                        <pre id="codeContent4" class="multiline-text">
-    implementation fileTree(dir: 'lib', include: ['*.jar'])
-</pre>
+                        <pre id="codeContent4" class="multiline-text"><code class="language-gradle">implementation fileTree(dir: 'lib', include: ['*.jar'])
+</code></pre>
                     </div>
 
                     <p>
@@ -208,8 +211,7 @@ sourceSets {
                         <div class="code-frame-icon copy-code" data-target="codeContent5">
                             <img src="img/code-frame-icon.svg" alt="">
                         </div>
-                        <pre id="codeContent5" class="multiline-text">
-task buildSwiftProject(type: Exec) {
+                        <pre id="codeContent5" class="multiline-text"><code class="language-gradle">task buildSwiftProject(type: Exec) {
     commandLine 'scd',
             'archive', '--type', 'android',
             '--path', 'src/main/swift',
@@ -222,7 +224,7 @@ tasks.whenTaskAdded { task ->
         task.dependsOn buildSwiftProject
     }
 }
-</pre>
+</code></pre>
                     </div>
                 </li>
             </ol>
@@ -239,8 +241,7 @@ tasks.whenTaskAdded { task ->
                 <div class="code-frame-icon copy-code" data-target="codeContent6">
                     <img src="img/code-frame-icon.svg" alt="">
                 </div>
-                <pre id="codeContent6" class="multiline-text">
-@Override
+                <pre id="codeContent6" class="multiline-text"><code class="language-java">@Override
 protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.activity_main);
@@ -255,7 +256,7 @@ protected void onCreate(Bundle savedInstanceState) {
     // Load JNI library containing Swift code
     System.loadLibrary("SwiftAndroidExample");
 }
-</pre>
+</code></pre>
             </div>
 
             <h3>Declare and call native Swift methods in Java</h3>
@@ -269,14 +270,13 @@ protected void onCreate(Bundle savedInstanceState) {
                         <div class="code-frame-icon copy-code" data-target="codeContent8">
                             <img src="img/code-frame-icon.svg" alt="">
                         </div>
-                        <pre id="codeContent8" class="multiline-text">
-public class MainActivity extends AppCompatActivity {
+                        <pre id="codeContent8" class="multiline-text"><code class="language-java">public class MainActivity extends AppCompatActivity {
     // Declare a native method in Java, with the implementation in Swift
     private native void swiftHelloWorld();
 
     // ... Rest of your MainActivity code
 }
-</pre>
+</code></pre>
                     </div>
                 </li>
 
@@ -290,8 +290,7 @@ public class MainActivity extends AppCompatActivity {
                         <div class="code-frame-icon copy-code" data-target="codeContent8">
                             <img src="img/code-frame-icon.svg" alt="">
                         </div>
-                        <pre id="codeContent8" class="multiline-text">
-@Override
+                        <pre id="codeContent8" class="multiline-text"><code class="language-java">@Override
 protected void onCreate(Bundle savedInstanceState) {
     // ... Activity and Swift initialization code added before
 
@@ -299,7 +298,7 @@ protected void onCreate(Bundle savedInstanceState) {
     String msg = swiftHelloWorld();
     android.util.Log.i("SwiftAndroidExample", msg);
 }
-</pre>
+</code></pre>
                     </div>
 
 
@@ -316,8 +315,7 @@ protected void onCreate(Bundle savedInstanceState) {
                 <div class="code-frame-icon copy-code" data-target="codeContent9">
                     <img src="img/code-frame-icon.svg" alt="">
                 </div>
-                <pre id="codeContent9" class="multiline-text">
-import Dispatch
+                <pre id="codeContent9" class="multiline-text"><code class="language-swift">import Dispatch
 import Foundation
 import Java
 
@@ -338,7 +336,7 @@ public func MainActivity_printHelloWorld(
     // Call the Swift function to update tasks list in Java
     updateTasksList(activity: mainActivity)
 }
-</pre>
+</code></pre>
             </div>
 
             <p>This Swift code demonstrates the integration of Swift functions with Java methods, allowing for bidirectional communication between Swift and Java in your Android application.</p>
