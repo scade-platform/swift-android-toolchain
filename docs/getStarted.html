@@ -254,37 +254,57 @@ protected void onCreate(Bundle savedInstanceState) {
 
     // Load JNI library containing Swift code
     System.loadLibrary("SwiftAndroidExample");
-
-    // other activity initialization code
 }
 </pre>
             </div>
 
-            <h3>Java Methods Calling Swift Implementation</h3>
-            <p>In your Android application, you can declare Java methods that serve as bridges to Swift code. The implementation of these methods will be written in Swift, allowing seamless integration between the two languages. Here's an example:</p>
+            <h3>Declare and call native Swift methods in Java</h3>
 
-            <div class="code-container">
-                <div class="code-frame-icon copy-code" data-target="codeContent8">
-                    <img src="img/code-frame-icon.svg" alt="">
-                </div>
-                <pre id="codeContent8" class="multiline-text">
+            <ol class="dots no-padding-list">
+                <li class="inter-regular">
+                    <p>
+                        In the <code>MainActivity</code> class, declare a native method named <code>swiftHelloWorld</code>:
+                    </p>
+                    <div class="code-container">
+                        <div class="code-frame-icon copy-code" data-target="codeContent8">
+                            <img src="img/code-frame-icon.svg" alt="">
+                        </div>
+                        <pre id="codeContent8" class="multiline-text">
 public class MainActivity extends AppCompatActivity {
     // Declare a native method in Java, with the implementation in Swift
-    public native void printHelloWorld();
-
-    // This method is called from Swift code, and the result is sent as an input parameter
-    public void printText(String validationResult) {
-
-        // Assuming headerTV is a TextView in your layout
-        headerTV.setText(validationResult);
-    }
+    private native void swiftHelloWorld();
 
     // ... Rest of your MainActivity code
 }
 </pre>
-            </div>
+                    </div>
+                </li>
 
-            <p>The Swift implementation of <code>printHelloWorld</code> and the Swift code calling <code>printText</code> will complete the interaction between Java and Swift, providing a seamless integration of functionalities in your Android application.</p>
+                <li>
+                    <p>
+                        At the end of the <code>onCreate</code> method of the <code>MainActivity</code> class, call
+                        the <code>swiftHelloWorld</code> method:
+                    </p>
+
+                    <div class="code-container">
+                        <div class="code-frame-icon copy-code" data-target="codeContent8">
+                            <img src="img/code-frame-icon.svg" alt="">
+                        </div>
+                        <pre id="codeContent8" class="multiline-text">
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    // ... Activity and Swift initialization code added before
+
+    // Call the swiftHelloWorld method and log returned value
+    String msg = swiftHelloWorld();
+    android.util.Log.i("SwiftAndroidExample", msg);
+}
+</pre>
+                    </div>
+
+
+                </li>
+            </ol>
 
             <h3>Swift Implementation for Java Methods</h3>
             <p>
