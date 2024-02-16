@@ -138,7 +138,7 @@ swift package init --name SwiftAndroidExample
                         It will create a new SPM project named <code>SwiftAndroidExample</code> within the
                         <code>app/src/main/swift</code> subdirectory.This project follows the standard structure of
                         an SPM project and will be automatically built by Gradle as part of the Android project's
-                        build process with custom build tasks configured in the build.gradle file.
+                        build process with custom build tasks configured in the <code>build.gradle</code> file.
                     </p>
                 </li>
 
@@ -169,7 +169,7 @@ swift package init --name SwiftAndroidExample
             <h3>Configure Swift SPM project in build.gradle</h3>
 
             <p>
-                To configure SPM project build, make the following changes in the <code>build.gradle</code> file:
+                To configure SPM project build, make the following changes in the <code>app/build.gradle</code> file:
             </p>
 
             <ol class="dots no-padding-list">
@@ -206,7 +206,7 @@ swift package init --name SwiftAndroidExample
                     </p>
                 </li>
                 <li class="inter-regular">
-                    At the end of <code>build.gradle</code>, insert the following custom Gradle task:
+                    At the end of <code>app/build.gradle</code>, insert the following custom Gradle task:
                     <div class="code-container">
                         <div class="code-frame-icon copy-code" data-target="codeContent5">
                             <img src="img/code-frame-icon.svg" alt="">
