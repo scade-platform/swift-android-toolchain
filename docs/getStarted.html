@@ -300,6 +300,11 @@ protected void onCreate(Bundle savedInstanceState) {
     // Display the value returned from swift in the text view
     android.widget.TextView text = new android.widget.TextView(this);
     text.setText(msg);
+    text.setGravity(android.view.Gravity.CENTER_VERTICAL |
+                    android.view.Gravity.CENTER_HORIZONTAL);
+    text.setLayoutParams(new android.widget.RelativeLayout.LayoutParams(
+            android.widget.RelativeLayout.LayoutParams.MATCH_PARENT,
+            android.widget.RelativeLayout.LayoutParams.MATCH_PARENT));
     setContentView(text);
 }
 </code></pre>
