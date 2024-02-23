@@ -50,9 +50,20 @@
                 Before you begin Swift development for Android, make sure you have the following tools installed:
             </p>
             <ol>
-                <li>Xcode (For macOS): <span class="inter-regular">If you don't have Xcode installed, it is recommended to install it from the Mac App Store. Xcode includes Swift, and the installation of Xcode will automatically include Swift as part of the development tools.</span></li>
-                <li>Android Studio: <span class="inter-regular">Android Studio is the official integrated development environment (IDE) for Android app development. You can download Android Studio from the official website: <a
-                        href="https://developer.android.com/studio"> Android Studio Download.</a></span></li>
+                <li><span class="inter-medium">Xcode (For macOS):</span> If you don't have Xcode installed, it is recommended to install it from the Mac App Store. Xcode includes Swift, and the installation of Xcode will automatically include Swift as part of the development tools.</li>
+                <li>
+                    <span class="inter-medium">Android Studio with Android SDK and NDK:</span>
+                    Android Studio is the official integrated development environment (IDE) for Android app development.
+                    To install Android Studio with all required components perform the following steps:
+                    <ol>
+                        <li>Download Android Studio from the official website: <a href="https://developer.android.com/studio"> Android Studio Download.</a></li>
+                        <li>Run the downloaded installer and follow the setup instructions.</li>
+                        <li>Launch Android Studio and complete the initial configuration, including the installation of the Android SDK.</li>
+                        <li>Open SDK Manager by selecting Tools -> SDK Manager in the main menu.</li>
+                        <li>In the SDK Tools tab, select the NDK(side by side) and CMake checkbox. Click OK to download and install.</li>
+                        <li><a href="https://developer.android.com/studio/run/emulator">Install Android Emulator</a> if you want to run on Android emulators</li>        
+                    </ol>
+                </li>
                 <li>SCADE IDE <span class="inter-regular">(Optional): If you are interested in using Scade for Swift development, you can download it from SCADE's official website: <a
                         href="https://www.scade.io/download">Scade Download.</a></span></li>
             </ol>
@@ -60,43 +71,16 @@
         <div id="install" class="sec">
             <h3 >Install Swift for Android</h3>
             <h4>For macOS</h4>
-            <p>
-                Before setting up Swift for Android, ensure that you have Android Studio installed on your macOS. Follow these steps:
-            </p>
-
-            <p><span class="inter-medium">Install Android Studio:</span></p>
-            <ol class="dots intent-space">
-                <li class="inter-regular">Download Android Studio.</li>
-                <li class="inter-regular">Run the downloaded installer and follow the setup instructions.</li>
-                <li class="inter-regular">Launch Android Studio and complete the initial configuration, including the installation of the Android SDK.</li>
-                <li class="inter-regular">Install Android NDK, by clicking on Tools -> SDK Manager -> SDK Tools tab. Select the NDK(side by side) and CMake checkboxes. Click OK to download and install.</li>
-                <li class="inter-regular"><a href="https://developer.android.com/studio/run/emulator">Install Android Emulator</a> if you want to run on Android emulators</li>
-            </ol>
-
-            <p><span class="inter-medium">Install Swift Toolchain for Android:</span></p>
-            <ol class="dots intent-space">
-                <li class="inter-regular"><a href="https://github.com/scade-platform/swift-android-toolchain/releases/download/5.9.2/swift-android-5.9.2.pkg">Download</a> Swift Toolchain for Android</li>
-                <li class="inter-regular">Run the downloaded installer and follow the setup instructions.</li>
-            </ol>
-
-            <p><span class="inter-medium">Verify Swift Toolchain (Already Included in SCADE IDE):</span></p>
-            <ol class="dots intent-space">
-                <li class="inter-regular">
-                    In the terminal, check with the below commands if Swift Toolchain for Android is installed or not. The following command should print the installed Swift Toolchain version:                    
-
-                    <div class="code-container">
-                        <div class="code-frame-icon copy-code" data-target="codeContent1">
-                            <img src="img/code-frame-icon.svg" alt="">
-                        </div>
-                        <pre id="codeContent1" class="multiline-text"><code>scd list-installed
-</code></pre>
-                    </div>
+            <ol class="dots no-padding-list">
+                <li><a href="https://github.com/scade-platform/swift-android-toolchain/releases/download/5.9.2/swift-android-5.9.2.pkg">Download</a> Swift Toolchain for Android</li>
+                <li>Run the downloaded installer and follow the setup instructions.</li>
+                <li>
+                    You can verify installation by running the <code>scd list-installed</code> command in
+                    the terminal. It should print full path to the installed Swift toolchain for Android.
                 </li>
             </ol>
-
             <h4>For Linux</h4>
             <p>Currently Swift for Android is available for macOS only. It will be available for Linux very soon.</p>
-
         </div>
 
         <div id="helloWorld" class="sec">
