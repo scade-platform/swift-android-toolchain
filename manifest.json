@@ -20,6 +20,15 @@
           "url": "https://github.com/scade-platform/swift-android-toolchain/releases/download/5.10.1/swift-android-compiler-5.10.1.tar.bz2"
         }
       ]
+    },
+    {
+      "name": "scade-simulator",
+      "versions": [
+        {
+          "version": "2.4.0",
+          "url": "https://github.com/scade-platform/ScadeKit/releases/download/2.4.0/ScadeSimulator.app.zip"
+        }
+      ]
     }
   ]
 }
