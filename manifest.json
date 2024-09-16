@@ -38,6 +38,15 @@
           "url": "https://services.gradle.org/distributions/gradle-7.6.4-bin.zip"
         }
       ]
+    },
+    {
+      "name": "cmake",
+      "versions": [
+        {
+          "version": "3.30.3",
+          "url": "https://github.com/Kitware/CMake/releases/download/v3.30.3/cmake-3.30.3-macos-universal.tar.gz"
+        }
+      ]
     }
   ]
 }
