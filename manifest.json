@@ -29,6 +29,15 @@
           "url": "https://github.com/scade-platform/ScadeKit/releases/download/2.4.0/ScadeSimulator.app.zip"
         }
       ]
+    },
+    {
+      "name": "gradle",
+      "versions": [
+        {
+          "version": "7.6.4",
+          "url": "https://services.gradle.org/distributions/gradle-7.6.4-bin.zip"
+        }
+      ]
     }
   ]
 }
