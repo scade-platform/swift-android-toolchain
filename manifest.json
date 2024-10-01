@@ -1,0 +1,53 @@
+{
+  "packages": [
+    {
+      "name": "swift-android-compiler",
+      "versions": [
+        {
+          "version": "5.8.0",
+          "url": "https://github.com/scade-platform/swift-android-toolchain/releases/download/5.8.0/swift-android-compiler-5.8.0.tar.bz2"
+        },
+        {
+          "version": "5.9.2",
+          "url": "https://github.com/scade-platform/swift-android-toolchain/releases/download/5.9.2/swift-android-compiler-5.9.2.tar.bz2"
+        },
+        {
+          "version": "5.9.2-1",
+          "url": "https://github.com/scade-platform/swift-android-toolchain/releases/download/5.9.2-1/swift-android-compiler-5.9.2-1.tar.bz2"
+        },
+        {
+          "version": "5.10.1",
+          "url": "https://github.com/scade-platform/swift-android-toolchain/releases/download/5.10.1/swift-android-compiler-5.10.1.tar.bz2"
+        }
+      ]
+    },
+    {
+      "name": "scade-simulator",
+      "versions": [
+        {
+          "version": "2.4.0",
+          "url": "https://github.com/scade-platform/ScadeKit/releases/download/2.4.0/ScadeSimulator.app.zip"
+        }
+      ]
+    },
+    {
+      "name": "gradle",
+      "versions": [
+        {
+          "version": "7.6.4",
+          "url": "https://services.gradle.org/distributions/gradle-7.6.4-bin.zip"
+        }
+      ]
+    },
+    {
+      "name": "cmake",
+      "versions": [
+        {
+          "version": "3.30.3",
+          "url": "https://github.com/Kitware/CMake/releases/download/v3.30.3/cmake-3.30.3-macos-universal.tar.gz"
+        }
+      ]
+    }
+  ]
+}
+
