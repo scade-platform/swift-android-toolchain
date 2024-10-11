@@ -54,6 +54,21 @@ scd archive --platform android-arm64-v8a \
 
 The resulting archive directory will be placed into the `lib` subdirectory of the current working directory. You can change the output directory using the -o argument.
 
+### Running an SPM exectuable on the Android platform
+
+To run an SPM executable product on an Android device or emulator, simply execute the `scd run` command and pass the executable product name along with the Android platform you want to run it on:
+```
+scd run --platform android-arm64-v8a --product myexecutable
+```
+
+This will automatically build and archive the `myexecutable` product for the specified platform, install it on the running device or emulator, and execute it.
+
+If you want to automatically launch an Android emulator, you can pass the AVD image name to the `scd run` command using the `--device` option:
+```
+scd run --platform android-arm64-v8a --product myexecutable --device AVDName
+```
+
+
 ### Archiving an SPM project into .aar library
 The `scd` build tool can also archive an SPM project into an Android .aar library.
 
