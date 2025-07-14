@@ -11,7 +11,7 @@ The Swift Toolchain for Android is a complete toolchain for building Swift code 
 The toolchain also includes the SCADE Build Tool, which allows you to build and archive Swift SPM projects for Android with a single command. Read more about the SCADE Build Tool here:\
 https://github.com/scade-platform/scade-build-tool
 
-The Swift Toolchain for Android supports the following Swift versions: 5.8, 5.9, 5.10. The Swift 6.0 is in progress now and will be available soon.
+The Swift Toolchain for Android supports the following Swift versions: 5.8, 5.9, 5.10, 6.0. The Swift 6.1 is in progress now and will be available soon.
 
 ## Installation
 
